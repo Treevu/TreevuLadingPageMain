@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CloseIcon, CheckIcon } from './icons';
+import { CloseIcon } from './icons';
 
 interface DemoFormModalProps {
   isOpen: boolean;
@@ -12,6 +12,7 @@ const DemoFormModal: React.FC<DemoFormModalProps> = ({ isOpen, onClose }) => {
     workEmail: '',
     companyName: '',
     employeeCount: '',
+    interest: 'equipo', // 'equipo' or 'comercio'
   });
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -24,6 +25,7 @@ const DemoFormModal: React.FC<DemoFormModalProps> = ({ isOpen, onClose }) => {
         workEmail: '',
         companyName: '',
         employeeCount: '',
+        interest: 'equipo',
       });
     }
   }, [isOpen]);
@@ -70,6 +72,23 @@ const DemoFormModal: React.FC<DemoFormModalProps> = ({ isOpen, onClose }) => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">Solicita tu Demo Gratuita</h2>
             <p className="text-slate-400 text-center mb-6">Completa tus datos y nos pondremos en contacto.</p>
             <form onSubmit={handleSubmit} className="space-y-5">
+               <div>
+                <label className="block text-sm font-medium text-slate-300 mb-2">Tu interés principal</label>
+                <div className="grid grid-cols-2 gap-3">
+                    <label className={`flex items-center justify-center p-3 border rounded-lg cursor-pointer transition-colors ${formData.interest === 'equipo' ? 'bg-teal-500/20 border-teal-500' : 'bg-slate-700/50 border-slate-600 hover:border-slate-500'}`}>
+                        <input type="radio" name="interest" value="equipo" checked={formData.interest === 'equipo'} onChange={handleChange} className="sr-only" />
+                        <span className="font-semibold text-sm">Mejorar mi equipo</span>
+                    </label>
+                    <label className={`flex items-center justify-center p-3 border rounded-lg cursor-pointer transition-colors ${formData.interest === 'comercio' ? 'bg-teal-500/20 border-teal-500' : 'bg-slate-700/50 border-slate-600 hover:border-slate-500'}`}>
+                        <input type="radio" name="interest" value="comercio" checked={formData.interest === 'comercio'} onChange={handleChange} className="sr-only" />
+                        <span className="font-semibold text-sm">Llegar a más clientes</span>
+                    </label>
+                </div>
+              </div>
+
+              <div className="relative border-t border-slate-700/60 !mt-8 !mb-6">
+                  <span className="absolute left-1/2 -translate-x-1/2 -top-3 bg-slate-800 px-2 text-xs text-slate-400">DETALLES</span>
+              </div>
               <div>
                 <label htmlFor="fullName" className="block text-sm font-medium text-slate-300 mb-1">Nombre Completo</label>
                 <input type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} required className="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors" />
@@ -83,7 +102,7 @@ const DemoFormModal: React.FC<DemoFormModalProps> = ({ isOpen, onClose }) => {
                 <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} required className="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors" />
               </div>
               <div>
-                <label htmlFor="employeeCount" className="block text-sm font-medium text-slate-300 mb-1">Número de Empleados</label>
+                <label htmlFor="employeeCount" className="block text-sm font-medium text-slate-300 mb-1">Número de Empleados / Clientes</label>
                 <select id="employeeCount" name="employeeCount" value={formData.employeeCount} onChange={handleChange} required className="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors appearance-none bg-no-repeat bg-right-4" style={{backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`}}>
                   <option value="" disabled>Selecciona un rango</option>
                   <option value="50-100">50 - 100</option>

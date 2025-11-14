@@ -13,7 +13,15 @@ const faqs = [
     },
     {
         question: "¿Quiénes son elegibles para el programa piloto gratuito?",
-        answer: "El piloto está diseñado para empresas con más de 50 empleados que buscan soluciones innovadoras para la gestión de talento y el bienestar organizacional. Los cupos son limitados y buscamos socios comprometidos con la mejora continua."
+        answer: "El piloto está diseñado principalmente para empresas con más de 50 empleados. Como parte del ecosistema, también invitamos a un grupo selecto de comercios que deseen conectar con la red de colaboradores de nuestras empresas asociadas."
+    },
+    {
+        question: "Soy un comercio, ¿cómo puedo participar?",
+        answer: "¡Excelente! Buscamos marcas y servicios que aporten valor a nuestros usuarios. El proceso es simple: solicita una demo, cuéntanos sobre tu negocio y nuestro equipo evaluará cómo podemos crear una alianza beneficiosa para todos."
+    },
+    {
+        question: "¿Qué beneficios obtengo al ofrecer descuentos en Treevü?",
+        answer: "Obtienes acceso directo a un segmento de clientes de alto poder adquisitivo y estabilidad financiera, lo que se traduce en un mayor ticket promedio, mejor tasa de conversión y la oportunidad de construir lealtad con un público premium."
     }
 ];
 

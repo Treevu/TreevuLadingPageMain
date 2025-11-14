@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import ProblemSection from './components/ProblemSection';
 import ImpactSection from './components/ImpactSection';
+import ForMerchantsSection from './components/ForMerchantsSection';
 import KeyMetricsSection from './components/KeyMetricsSection';
 import OpportunitySection from './components/OpportunitySection';
 import TrustSection from './components/TrustSection';
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         <ProblemSection />
         <ImpactSection />
         <KeyMetricsSection />
+        <ForMerchantsSection />
         <OpportunitySection onOpenDemo={handleOpenModal} />
         <TrustSection />
         <CtaSection onOpenDemo={handleOpenModal} />

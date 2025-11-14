@@ -40,7 +40,7 @@ const KeyMetricsSection: React.FC = () => {
       <div className="container mx-auto px-6">
         <AnimateOnScroll className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300 text-glow-white">
-            Impacto Medible en tu Organización
+            Impacto Medible en tu Ecosistema
           </h2>
           <p className="text-lg text-slate-300">
             Conecta el bienestar de tu equipo con los resultados del negocio. Treevü traduce datos complejos en KPIs claros y accionables.

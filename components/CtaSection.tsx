@@ -13,7 +13,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({ onOpenDemo }) => {
       <div className="container mx-auto px-6 text-center text-white">
         <AnimateOnScroll>
           <h2 className="text-3xl md:text-5xl font-extrabold max-w-3xl mx-auto mb-4 text-glow-white">
-            El bienestar financiero no es un lujo. Es un multiplicador de talento.
+            El bienestar financiero no es un lujo. Es un multiplicador para todos.
           </h2>
         </AnimateOnScroll>
         <AnimateOnScroll delay="delay-200">

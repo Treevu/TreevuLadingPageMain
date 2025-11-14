@@ -15,9 +15,9 @@ const OpportunitySection: React.FC<OpportunitySectionProps> = ({ onOpenDemo }) =
       <div className="container relative mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Únete al piloto exclusivo de Treevü</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Únete al Piloto del Ecosistema Treevü</h2>
             <p className="text-lg text-slate-300 mb-12">
-              Obtén acceso anticipado a insights predictivos sobre bienestar financiero y talento. Transforma datos invisibles en decisiones estratégicas y ahorro real.
+              Sé de los primeros en transformar el bienestar de tu equipo en una ventaja competitiva. Obtén insights únicos y ofréceles a tus colaboradores acceso a una red de beneficios exclusivos de comercios asociados.
             </p>
           </AnimateOnScroll>
           
@@ -27,18 +27,18 @@ const OpportunitySection: React.FC<OpportunitySectionProps> = ({ onOpenDemo }) =
               <ul className="space-y-5">
                 <li className="flex items-start">
                   <CheckIcon />
-                  <span className="ml-4 text-slate-300 text-lg">Diagnóstico personalizado de bienestar financiero por área.</span>
+                  <span className="ml-4 text-slate-300 text-lg">Para Empresas: Diagnóstico personalizado de bienestar financiero por área.</span>
                 </li>
                 <li className="flex items-start">
                   <CheckIcon />
-                  <span className="ml-4 text-slate-300 text-lg">Reporte de riesgos e impacto en productividad.</span>
+                  <span className="ml-4 text-slate-300 text-lg">Para Comercios: Acceso a la red de usuarios de alto valor.</span>
                 </li>
                 <li className="flex items-start">
                   <CheckIcon />
-                  <span className="ml-4 text-slate-300 text-lg">Recomendaciones de acción basadas en IA.</span>
+                  <span className="ml-4 text-slate-300 text-lg">Recomendaciones de acción y crecimiento basadas en IA para ambos.</span>
                 </li>
               </ul>
-              <p className="mt-8 text-center font-semibold text-teal-400 border-t border-slate-700 pt-6">Sin costo. Sin compromiso. Solo aprendizaje accionable.</p>
+              <p className="mt-8 text-center font-semibold text-teal-400 border-t border-slate-700 pt-6">Sin costo. Sin compromiso. Solo crecimiento y aprendizaje.</p>
             </div>
           </AnimateOnScroll>
 

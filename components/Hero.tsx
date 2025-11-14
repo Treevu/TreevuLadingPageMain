@@ -85,10 +85,10 @@ const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
 
       <div className="container relative mx-auto px-6 text-center z-10">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300 leading-tight mb-6 max-w-4xl mx-auto opacity-0 animate-fadeInUp text-glow-white" style={{ animationDelay: '0.1s' }}>
-          Tu gente rinde mejor cuando el dinero no es lo primero en su mente.
+          El Ecosistema de Bienestar que Potencia a tu Equipo y a tu Negocio.
         </h1>
         <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto opacity-0 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
-          Treevü mide, predice y mejora el bienestar financiero de tus equipos con IA. Reduce el burnout, recupera productividad y aumenta la retención del talento.
+          Mejora la productividad y retención de tu equipo midiendo su salud financiera. Como valor agregado, tus colaboradores acceden a un ecosistema de ofertas que conecta a comercios con clientes de alto valor.
         </p>
         <div 
           className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fadeInUp"
