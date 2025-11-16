@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ProblemSection from './components/ProblemSection';
+import CostOfTurnoverSection from './components/CostOfTurnoverSection';
 import ImpactSection from './components/ImpactSection';
 import ForMerchantsSection from './components/ForMerchantsSection';
 import KeyMetricsSection from './components/KeyMetricsSection';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
       <main>
         <Hero onOpenDemo={handleOpenModal} />
         <ProblemSection />
+        <CostOfTurnoverSection />
         <ImpactSection />
         <KeyMetricsSection />
         <ForMerchantsSection />

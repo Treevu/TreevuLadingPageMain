@@ -2,26 +2,26 @@ import React, { useState, useEffect } from 'react';
 import AnimateOnScroll from './AnimateOnScroll';
 
 const stats = [
-  {
-    main: 'Más del <span class="text-teal-600 font-bold">70% de los colaboradores</span> admite que el dinero es su principal fuente de estrés.',
-    sub: 'Eso no se queda en casa; se lleva al trabajo.',
-    source: 'Fuente: Bank of America, 2023'
-  },
-  {
-    main: 'Empleados con estrés financiero pierden en promedio <span class="text-teal-600 font-bold">11.6 días de productividad</span> al año.',
-    sub: 'Equivalente a una pérdida significativa de foco y rendimiento.',
-    source: 'Fuente: Morgan Stanley at Work, 2023'
-  },
-  {
-    main: 'El <span class="text-teal-600 font-bold">47% de los empleados</span> pasa 3 o más horas a la semana en el trabajo pensando en sus finanzas.',
-    sub: 'El presentismo financiero cuesta a las empresas miles de dólares por empleado.',
-    source: 'Fuente: PwC, 2023'
-  },
-  {
-    main: '<span class="text-teal-600 font-bold">1 de cada 3 empleados</span> ha rechazado una oferta laboral por falta de beneficios de bienestar financiero.',
-    sub: 'Atraer y retener talento ahora depende de un soporte integral.',
-    source: 'Fuente: Origin, 2023'
-  },
+    {
+      main: 'El <span class="text-teal-600 font-bold">60% de los empleados</span> identifica el estrés financiero como su principal fuente de preocupación.',
+      sub: 'Esto afecta directamente su concentración, salud mental y compromiso laboral.',
+      source: 'Fuente: PwC Employee Financial Wellness Survey'
+    },
+    {
+      main: 'Cada empleado te cuesta entre <span class="text-teal-600 font-bold">11 y 14 horas de productividad</span> al mes debido al estrés financiero.',
+      sub: 'Esto equivale a una pérdida anual de casi $500 mil millones para las empresas a nivel global.',
+      source: 'Fuente: Global Wellness Institute'
+    },
+    {
+      main: 'En LATAM, el <span class="text-teal-600 font-bold">68% de los trabajadores</span> vive "al día", y un 45% tiene deudas que superan el 40% de sus ingresos.',
+      sub: 'La inestabilidad económica regional agrava el problema y la necesidad de soluciones efectivas.',
+      source: 'Fuente: Estudios Regionales 2024'
+    },
+    {
+      main: 'Los colaboradores con alto estrés financiero tienen <span class="text-teal-600 font-bold">2.5 veces más probabilidades</span> de buscar un nuevo empleo.',
+      sub: 'El bienestar ya no es un beneficio opcional, es una estrategia clave para la retención de talento.',
+      source: 'Fuente: Deloitte Human Capital Trends'
+    },
 ];
 
 const ProblemSection: React.FC = () => {
@@ -48,10 +48,10 @@ const ProblemSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <AnimateOnScroll className="md:pr-8">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                    Hasta <span className="text-teal-600">8 horas de productividad por semana</span> menos. Por empleado.
+                    El estrés financiero de tu equipo te está costando más de lo que crees: <span className="text-teal-600">hasta 14 horas de productividad perdidas</span> al mes. Por empleado.
                 </h2>
                 <p className="text-lg text-slate-600">
-                   El burnout financiero es un costo silencioso. Las organizaciones pierden miles de dólares al año sin darse cuenta: bajo foco, ausentismo, rotación y decisiones impulsivas que afectan directamente al negocio.
+                   El estrés financiero no es un problema personal, es un lastre organizacional. Se traduce en presentismo, menor innovación y una rotación costosa que impacta directamente en tu balance final.
                 </p>
             </AnimateOnScroll>
           

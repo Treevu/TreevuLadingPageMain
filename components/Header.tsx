@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
           onClick={(e) => { e.preventDefault(); onOpenDemo(); }}
           className="hidden sm:inline-block bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold px-6 py-2.5 rounded-lg hover:shadow-lg hover:shadow-teal-500/40 transition-all duration-300 transform hover:scale-105 cursor-pointer"
         >
-          Solicita tu demo
+          Inscríbete al piloto
         </a>
       </div>
     </header>

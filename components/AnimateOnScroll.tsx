@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
 
 interface AnimateOnScrollProps {
-  children: ReactNode;
+  children: ReactNode | ((isVisible: boolean) => ReactNode);
   className?: string;
   delay?: string; // Tailwind delay class e.g., 'delay-300'
   animationType?: 'fadeUp' | 'scaleIn';
@@ -25,7 +25,7 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
         }
       },
       {
-        threshold: 0.1, // Trigger when 10% of the element is visible
+        threshold: 0.2, // Trigger when 20% of the element is visible
         rootMargin: '0px 0px -50px 0px', // Trigger a little before it's fully in view
       }
     );
@@ -62,7 +62,7 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
         isVisible ? final : initial
       }`}
     >
-      {children}
+      {typeof children === 'function' ? children(isVisible) : children}
     </div>
   );
 };

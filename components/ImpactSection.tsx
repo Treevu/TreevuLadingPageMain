@@ -17,7 +17,7 @@ const ImpactSection: React.FC = () => {
         
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <AnimateOnScroll>
-            <div className="bg-white p-8 rounded-xl border border-slate-200 hover:border-teal-400 transition-colors duration-300 transform hover:-translate-y-2 shadow-sm hover:shadow-xl h-full">
+            <div className="bg-white p-8 rounded-xl border border-slate-200 hover:border-teal-400 transition-colors duration-300 transform hover:-translate-y-2 shadow-sm hover:shadow-xl h-full group">
               <div className="text-teal-500 mb-4">
                 <TargetIcon />
               </div>
@@ -26,7 +26,7 @@ const ImpactSection: React.FC = () => {
             </div>
           </AnimateOnScroll>
           <AnimateOnScroll delay="delay-200">
-            <div className="bg-white p-8 rounded-xl border border-slate-200 hover:border-teal-400 transition-colors duration-300 transform hover:-translate-y-2 shadow-sm hover:shadow-xl h-full">
+            <div className="bg-white p-8 rounded-xl border border-slate-200 hover:border-teal-400 transition-colors duration-300 transform hover:-translate-y-2 shadow-sm hover:shadow-xl h-full group">
               <div className="text-teal-500 mb-4">
                 <CostIcon />
               </div>
@@ -35,7 +35,7 @@ const ImpactSection: React.FC = () => {
             </div>
           </AnimateOnScroll>
           <AnimateOnScroll delay="delay-400">
-            <div className="bg-white p-8 rounded-xl border border-slate-200 hover:border-teal-400 transition-colors duration-300 transform hover:-translate-y-2 shadow-sm hover:shadow-xl h-full">
+            <div className="bg-white p-8 rounded-xl border border-slate-200 hover:border-teal-400 transition-colors duration-300 transform hover:-translate-y-2 shadow-sm hover:shadow-xl h-full group">
               <div className="text-teal-500 mb-4">
                 <RoiIcon />
               </div>

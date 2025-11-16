@@ -61,6 +61,28 @@
       .animate-bar {
         animation: animate-bar-width 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
       }
+      /* Icon Animations */
+      @keyframes pulse-ring {
+        0%, 100% { opacity: 0.5; transform: scale(0.95); }
+        50% { opacity: 1; transform: scale(1.05); }
+      }
+      @keyframes arrow-move {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(2px, -2px); }
+      }
+      @keyframes scale-up-bounce {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+      .group:hover .animate-pulse-ring {
+        animation: pulse-ring 1.5s ease-in-out infinite;
+      }
+      .group:hover .animate-arrow-move {
+        animation: arrow-move 1s ease-in-out infinite;
+      }
+      .group:hover .animate-scale-up-bounce {
+        animation: scale-up-bounce 1s ease-in-out infinite;
+      }
     </style>
   <script type="importmap">
 {

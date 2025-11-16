@@ -1,38 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ProductivityIcon, RetentionIcon, EngagementIcon, AbsenteeismIcon } from './icons';
 import AnimateOnScroll from './AnimateOnScroll';
 
 const metrics = [
   {
     icon: <ProductivityIcon />,
-    value: '8.2 Horas/Mes',
     title: 'Productividad Recuperada',
     description: 'Tiempo que tus empleados recuperan al reducir la distracción por estrés financiero.',
-    delay: 'delay-0',
-    valueClassName: 'text-4xl'
+    config: { targetValue: 8.2, maxValue: 16, decimals: 1, prefix: '+', suffix: ' Horas/Mes', color: 'text-teal-600' }
   },
   {
     icon: <RetentionIcon />,
-    value: '+15%',
     title: 'Aumento de Retención',
     description: 'Incremento en la lealtad del talento al ofrecer apoyo financiero relevante y personalizado.',
-    delay: 'delay-200'
+    config: { targetValue: 15, maxValue: 100, decimals: 0, prefix: '+', suffix: '%', color: 'text-sky-600' }
   },
   {
     icon: <EngagementIcon />,
-    value: '+22%',
     title: 'Mejora del Engagement',
     description: 'Aumento del compromiso y la moral del equipo al sentirse respaldado por la empresa.',
-    delay: 'delay-400'
+    config: { targetValue: 22, maxValue: 100, decimals: 0, prefix: '+', suffix: '%', color: 'text-emerald-600' }
   },
   {
     icon: <AbsenteeismIcon />,
-    value: '-30%',
     title: 'Reducción de Ausentismo',
     description: 'Disminución de las ausencias no planificadas relacionadas con emergencias económicas.',
-    delay: 'delay-600'
+    config: { targetValue: 30, maxValue: 100, decimals: 0, prefix: '-', suffix: '%', color: 'text-amber-600' }
   },
 ];
+
+interface AnimatedCounterProps {
+  targetValue: number;
+  duration?: number;
+  isVisible: boolean;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+}
+
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ targetValue, duration = 1500, isVisible, prefix = '', suffix = '', decimals = 0 }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime: number | undefined;
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
+      const animatedValue = percentage * targetValue;
+      setCount(animatedValue);
+
+      if (progress < duration) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(targetValue);
+      }
+    };
+    
+    const animationFrameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isVisible, targetValue, duration]);
+
+  return (
+    <>{prefix}{count.toFixed(decimals)}{suffix}</>
+  );
+};
+
 
 const KeyMetricsSection: React.FC = () => {
   return (
@@ -47,20 +83,33 @@ const KeyMetricsSection: React.FC = () => {
           </p>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="space-y-8 max-w-3xl mx-auto">
           {metrics.map((metric, index) => (
-            <AnimateOnScroll key={index} delay={metric.delay} className="relative group">
-              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 text-center h-full transform transition-all duration-300 hover:-translate-y-2 hover:border-teal-500/50 hover:glow-shadow flex flex-col items-center justify-center min-h-[260px]">
-                <div className="flex justify-center text-teal-400 mb-4">
-                  {metric.icon}
+            <AnimateOnScroll key={index} delay={`delay-${index * 150}`}>
+              {(isVisible) => (
+                <div className="bg-slate-50 rounded-2xl shadow-lg p-8 flex text-slate-900">
+                  {/* Left Gutter with Icon and Line */}
+                  <div className="w-16 flex-shrink-0 flex flex-col items-center mr-6">
+                      <div className="flex-shrink-0 h-14 w-14 bg-teal-500 text-white rounded-full flex items-center justify-center shadow-lg z-10 [&>svg]:w-8 [&>svg]:h-8">
+                          {metric.icon}
+                      </div>
+                      {index < metrics.length - 1 && (
+                          <div className="flex-grow w-0.5 bg-teal-200 my-4 rounded-full"></div>
+                      )}
+                  </div>
+                  
+                  {/* Content Area */}
+                  <div className="flex-grow">
+                      <h4 className="text-xl font-bold text-slate-800">{metric.title}</h4>
+                      <div className={`text-4xl md:text-5xl font-black my-3 ${metric.config.color}`}>
+                          <AnimatedCounter isVisible={isVisible} {...metric.config} />
+                      </div>
+                      <p className="text-slate-600 text-lg">
+                          {metric.description}
+                      </p>
+                  </div>
                 </div>
-                <h3 className={`${metric.valueClassName || 'text-5xl'} font-black text-white`}>{metric.value}</h3>
-                <h4 className="text-md font-semibold text-slate-200 mt-2">{metric.title}</h4>
-              </div>
-               <div className="absolute bottom-full mb-3 w-60 p-3 bg-slate-950 text-white text-sm rounded-lg shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 pointer-events-none left-1/2 -translate-x-1/2 z-10 border border-slate-700">
-                {metric.description}
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-slate-950"></div>
-              </div>
+              )}
             </AnimateOnScroll>
           ))}
         </div>

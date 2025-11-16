@@ -29,7 +29,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({ onOpenDemo }) => {
             className="inline-flex items-center justify-center bg-white text-teal-600 font-bold text-xl px-12 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-2xl hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] cursor-pointer"
           >
             <LightbulbIcon />
-            <span className="ml-3">Solicita tu demo o únete al piloto</span>
+            <span className="ml-3">Inscríbete al piloto gratuito</span>
           </a>
         </AnimateOnScroll>
       </div>

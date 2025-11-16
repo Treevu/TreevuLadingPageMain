@@ -50,7 +50,7 @@ const OpportunitySection: React.FC<OpportunitySectionProps> = ({ onOpenDemo }) =
               className="inline-flex items-center justify-center bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold text-lg px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 glow-shadow cursor-pointer"
             >
               <RocketIcon />
-              <span className="ml-3">Regístrate para el piloto gratuito</span>
+              <span className="ml-3">Inscríbete al piloto gratuito</span>
             </a>
           </AnimateOnScroll>
         </div>
