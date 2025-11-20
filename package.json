@@ -1,5 +1,5 @@
 {
-  "name": "treevü-landing-page",
+  "name": "treevü---ecosistema-de-bienestar-financiero",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "react-dom": "^19.2.0",
-    "react": "^19.2.0",
-    "@google/genai": "^1.29.0"
+    "lucide-react": "^0.554.0",
+    "react": "^19.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

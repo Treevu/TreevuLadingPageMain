@@ -1,39 +1,24 @@
-import React, { useState } from 'react';
-import Header from './components/Header';
+import React from 'react';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ProblemSection from './components/ProblemSection';
-import CostOfTurnoverSection from './components/CostOfTurnoverSection';
-import ImpactSection from './components/ImpactSection';
-import ForMerchantsSection from './components/ForMerchantsSection';
-import KeyMetricsSection from './components/KeyMetricsSection';
-import OpportunitySection from './components/OpportunitySection';
-import TrustSection from './components/TrustSection';
-import CtaSection from './components/CtaSection';
+import Solutions from './components/Solutions';
+import TechStack from './components/TechStack';
+import Pricing from './components/Pricing';
+import FoundersForm from './components/FoundersForm';
 import Footer from './components/Footer';
-import DemoFormModal from './components/DemoFormModal';
 
 const App: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
-
   return (
-    <div className="bg-white text-slate-800 antialiased">
-      <Header onOpenDemo={handleOpenModal} />
+    <div className="min-h-screen bg-treevu-base text-treevu-text font-sans selection:bg-brand-primary selection:text-treevu-base">
+      <Navbar />
       <main>
-        <Hero onOpenDemo={handleOpenModal} />
-        <ProblemSection />
-        <CostOfTurnoverSection />
-        <ImpactSection />
-        <KeyMetricsSection />
-        <ForMerchantsSection />
-        <OpportunitySection onOpenDemo={handleOpenModal} />
-        <TrustSection />
-        <CtaSection onOpenDemo={handleOpenModal} />
+        <Hero />
+        <Solutions />
+        <TechStack />
+        <Pricing />
+        <FoundersForm />
       </main>
       <Footer />
-      <DemoFormModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };

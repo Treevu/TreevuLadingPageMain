@@ -1,104 +1,95 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Treevü | Mejora el Bienestar Financiero de tus Equipos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
-      body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #0F172A; /* slate-900 */
-      }
-      .glow-shadow {
-        box-shadow: 0 0 15px 0px rgba(20, 184, 166, 0.4), 0 0 30px 0px rgba(20, 184, 166, 0.3);
-      }
-      .text-glow-teal {
-        text-shadow: 0 0 5px rgba(20, 184, 166, 0.5), 0 0 10px rgba(20, 184, 166, 0.4);
-      }
-      .text-glow-white {
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 12px rgba(255, 255, 255, 0.4);
-      }
-      .border-glow-teal {
-         box-shadow: 0 0 12px rgba(20, 184, 166, 0.3);
-      }
-      .bg-gradient-dark-hero {
-        background: radial-gradient(ellipse 80% 50% at 50% -20%,rgba(14, 165, 233, 0.3), hsla(0,0%,100%,0));
-      }
-      .bg-gradient-cta {
-        background: linear-gradient(90deg, #0D9488 0%, #059669 100%);
-      }
-       @keyframes pulse {
-        0%, 100% {
-          transform: scale(1);
-          box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.7);
+<html lang="es" class="scroll-smooth scroll-pt-24">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Treevü - Ecosistema de Bienestar Financiero</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            treevu: {
+              base: '#1C1C1E',    // Negro Grafito
+              surface: '#2C2C2E', // Gris Carbón
+              active: '#3A3A3C',  // Gris Medio
+              text: '#FFFFFF',
+              muted: '#9CA3AF',
+            },
+            brand: {
+              primary: '#34D399', // Emerald 400 (Persona)
+              secondary: '#10B981',
+              accent: '#FACC15',  // Yellow 400 (Gamification/Founders)
+              danger: '#EF4444',  // Red 500
+            },
+            segment: {
+              empresa: '#60A5FA', // Blue 400
+              empresaSec: '#22D3EE',
+              socio: '#C084FC',   // Purple 400
+              socioSec: '#E879F9',
+            }
+          },
+          animation: {
+            'blob': 'blob 7s infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
         }
-        50% {
-          transform: scale(1.02);
-          box-shadow: 0 0 0 10px rgba(20, 184, 166, 0);
-        }
       }
-      .animate-pulse-slow {
-        animation: pulse 2.5s infinite;
-      }
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(15px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .animate-fadeInUp {
-        animation: fadeInUp 1s ease-out forwards;
-      }
-      @keyframes animate-bar-width {
-        from { width: 0%; }
-      }
-      .animate-bar {
-        animation: animate-bar-width 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-      }
-      /* Icon Animations */
-      @keyframes pulse-ring {
-        0%, 100% { opacity: 0.5; transform: scale(0.95); }
-        50% { opacity: 1; transform: scale(1.05); }
-      }
-      @keyframes arrow-move {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(2px, -2px); }
-      }
-      @keyframes scale-up-bounce {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-      }
-      .group:hover .animate-pulse-ring {
-        animation: pulse-ring 1.5s ease-in-out infinite;
-      }
-      .group:hover .animate-arrow-move {
-        animation: arrow-move 1s ease-in-out infinite;
-      }
-      .group:hover .animate-scale-up-bounce {
-        animation: scale-up-bounce 1s ease-in-out infinite;
-      }
-    </style>
-  <script type="importmap">
+    }
+  </script>
+  <style>
+    body {
+      background-color: #1C1C1E;
+      color: #FFFFFF;
+    }
+    /* Custom scrollbar for dark mode */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1C1C1E; 
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3A3A3C; 
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4B5563; 
+    }
+  </style>
+<script type="importmap">
 {
   "imports": {
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0"
+    "react": "https://aistudiocdn.com/react@^19.2.0"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+<body>
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
 </html>
