@@ -33,7 +33,6 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Soluciones', href: '#solutions' },
-    { name: 'Tecnología IA', href: '#ai-logic' },
     { name: 'Precios', href: '#pricing' },
     { name: 'Partners', href: '#founders-offer' },
   ];
@@ -77,11 +76,11 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <a 
-              href="#founders-offer"
-              onClick={(e) => scrollToSection(e, '#founders-offer')}
-              className="bg-brand-primary hover:bg-brand-secondary text-treevu-base px-6 py-2.5 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] text-sm cursor-pointer"
+              href="#roi-calculator"
+              onClick={(e) => scrollToSection(e, '#roi-calculator')}
+              className="bg-brand-primary hover:bg-brand-secondary text-treevu-base px-6 py-2.5 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] text-sm cursor-pointer whitespace-nowrap"
             >
-              Agendar Demo
+              Calcular ROI | Demo
             </a>
           </div>
 
@@ -113,11 +112,11 @@ const Navbar: React.FC = () => {
             ))}
             <div className="pt-4">
                 <a 
-                href="#founders-offer"
-                onClick={(e) => scrollToSection(e, '#founders-offer')}
+                href="#roi-calculator"
+                onClick={(e) => scrollToSection(e, '#roi-calculator')}
                 className="block w-full text-center bg-brand-primary text-treevu-base px-4 py-3 rounded-lg font-bold hover:bg-brand-secondary transition-colors cursor-pointer"
                 >
-                Agendar Demo
+                Calcular ROI | Demo
                 </a>
             </div>
           </div>

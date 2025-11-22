@@ -20,7 +20,14 @@ import {
   Target,
   Store,
   User,
-  Building2
+  Building2,
+  Cpu,
+  Scan,
+  Trophy,
+  Zap,
+  LineChart,
+  Globe,
+  ShieldCheck
 } from 'lucide-react';
 
 type DashboardView = 'PERSONA' | 'EMPRESA' | 'COMERCIO';
@@ -93,16 +100,16 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-treevu-muted mb-10 max-w-3xl mx-auto leading-relaxed">
-            El ecosistema donde <span className="text-brand-primary">Personas</span>, <span className="text-segment-empresa">Empresas</span> y <span className="text-segment-socio">Comercios</span> prosperan juntos gracias a un <span className="text-white font-semibold">Data Lake único en LATAM</span>.
+            Reduce la rotación de personal y aumenta el bienestar financiero de tu equipo con <span className="text-white font-semibold">IA predictiva</span>.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-5">
+          <div className="flex flex-col sm:flex-row justify-center gap-5 mb-10">
             <a 
-              href="#founders-offer" 
-              onClick={(e) => handleScroll(e, 'founders-offer')}
+              href="#roi-calculator" 
+              onClick={(e) => handleScroll(e, 'roi-calculator')}
               className="px-8 py-4 bg-brand-primary hover:bg-brand-secondary text-treevu-base text-lg font-bold rounded-xl shadow-[0_0_30px_rgba(52,211,153,0.4)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 group cursor-pointer"
             >
-              Empezar ahora
+              Calcular ROI y Agenda Demo
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
@@ -112,6 +119,24 @@ const Hero: React.FC = () => {
             >
               Ver Ecosistema
             </a>
+          </div>
+
+          {/* Tech Stack Trust Bar */}
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 animate-fade-in-up text-gray-500 text-xs font-bold tracking-widest uppercase">
+            <div className="flex items-center gap-2">
+              <Scan className="w-4 h-4 text-brand-primary" />
+              Treevü Vision™
+            </div>
+            <div className="hidden md:block w-1 h-1 bg-gray-700 rounded-full"></div>
+            <div className="flex items-center gap-2">
+              <Cpu className="w-4 h-4 text-segment-empresa" />
+              Cognitive Core™
+            </div>
+            <div className="hidden md:block w-1 h-1 bg-gray-700 rounded-full"></div>
+            <div className="flex items-center gap-2">
+              <MessageSquare className="w-4 h-4 text-segment-socio" />
+              Agents Orchestrator™
+            </div>
           </div>
         </div>
 
@@ -145,7 +170,7 @@ const Hero: React.FC = () => {
             <div className={`absolute -inset-1 bg-gradient-to-r ${activeView === 'PERSONA' ? 'from-brand-primary via-emerald-900 to-brand-primary' : activeView === 'EMPRESA' ? 'from-segment-empresa via-blue-900 to-segment-empresa' : 'from-segment-socio via-purple-900 to-segment-socio'} rounded-[20px] blur opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
             
             {/* Window Frame */}
-            <div className="relative bg-[#0c0c0e] border border-treevu-active rounded-[20px] shadow-2xl overflow-hidden flex flex-col md:flex-row h-auto md:h-[600px] transition-all duration-500">
+            <div className="relative bg-[#0c0c0e] border border-treevu-active rounded-[20px] shadow-2xl overflow-hidden flex flex-col md:flex-row h-auto md:h-[650px] transition-all duration-500">
               
               {/* Sidebar (Real Menu) */}
               <div className="hidden md:flex w-64 bg-[#131315] border-r border-treevu-active flex-col p-6 transition-colors duration-300">
@@ -161,15 +186,15 @@ const Hero: React.FC = () => {
                    </div>
                    <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-colors cursor-pointer">
                       {activeView === 'PERSONA' ? <Wallet className="w-5 h-5" /> : activeView === 'EMPRESA' ? <Users className="w-5 h-5" /> : <Target className="w-5 h-5" />}
-                      <span>{activeView === 'PERSONA' ? 'Movimientos' : activeView === 'EMPRESA' ? 'Colaboradores' : 'Campañas'}</span>
+                      <span>{activeView === 'PERSONA' ? 'Movimientos' : activeView === 'EMPRESA' ? 'Colaboradores' : 'Campañas IA'}</span>
                    </div>
                    <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-colors cursor-pointer">
                       <PieChart className="w-5 h-5" />
-                      <span>{activeView === 'PERSONA' ? 'Radar 3 UIT' : activeView === 'EMPRESA' ? 'Reportes FWI' : 'Conversiones'}</span>
+                      <span>{activeView === 'PERSONA' ? 'Radar 3 UIT' : activeView === 'EMPRESA' ? 'Analítica FWI' : 'Benchmark'}</span>
                    </div>
                    <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-colors cursor-pointer">
-                      <MessageSquare className="w-5 h-5" />
-                      <span>IA Assistant</span>
+                      {activeView === 'PERSONA' ? <Trophy className="w-5 h-5" /> : <MessageSquare className="w-5 h-5" />}
+                      <span>{activeView === 'PERSONA' ? 'Logros y Nivel' : 'Asistente IA'}</span>
                    </div>
                  </div>
 
@@ -180,10 +205,10 @@ const Hero: React.FC = () => {
                         <span>Estado del Plan</span>
                      </div>
                      <p className="text-gray-400 text-xs mb-3">
-                        {activeView === 'PERSONA' ? 'Plan Premium activo por tu empleador.' : activeView === 'EMPRESA' ? 'Licencia Enterprise vigente.' : 'Partner Amplify verificado.'}
+                        {activeView === 'PERSONA' ? 'Plan Explorer: Coach IA Activo' : activeView === 'EMPRESA' ? 'Plan Growth: Predicción Activa' : 'Plan Amplify: Insights Activos'}
                      </p>
                      <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
-                        <div className={`h-full ${getBgColor()} w-[85%]`}></div>
+                        <div className={`h-full ${getBgColor()} w-full shadow-[0_0_10px_currentColor]`}></div>
                      </div>
                    </div>
                  </div>
@@ -201,7 +226,7 @@ const Hero: React.FC = () => {
                     <div className="flex items-center gap-4">
                        <div className="relative cursor-pointer">
                           <Bell className="w-5 h-5 text-gray-400 hover:text-white" />
-                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-danger rounded-full"></div>
+                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-danger rounded-full border border-treevu-base"></div>
                        </div>
                        <div className="h-8 w-[1px] bg-treevu-active mx-2"></div>
                        <div className="flex items-center gap-2 cursor-pointer">
@@ -219,48 +244,53 @@ const Hero: React.FC = () => {
                  {/* Scrollable Area - DYNAMIC CONTENT */}
                  <div className="flex-1 p-6 md:p-8 overflow-y-auto custom-scrollbar">
                     
-                    <div className="mb-8 animate-fade-in-up">
-                       <h2 className="text-2xl font-display font-bold text-white">
-                         {activeView === 'PERSONA' && 'Hola, Alejandro 👋'}
-                         {activeView === 'EMPRESA' && 'Resumen de Talento 📊'}
-                         {activeView === 'COMERCIO' && 'Rendimiento de Campañas 🚀'}
-                       </h2>
-                       <p className="text-gray-400 text-sm mt-1">
-                         {activeView === 'PERSONA' && 'Tu FWI ha subido 4 puntos esta semana. ¡Sigue así!'}
-                         {activeView === 'EMPRESA' && 'El riesgo de fuga disminuyó un 12% gracias a las nuevas iniciativas.'}
-                         {activeView === 'COMERCIO' && 'Tus ofertas en Treevü generaron S/ 14k en ventas adicionales.'}
-                       </p>
+                    <div className="mb-8 animate-fade-in-up flex justify-between items-end">
+                       <div>
+                        <h2 className="text-2xl font-display font-bold text-white">
+                            {activeView === 'PERSONA' && 'Hola, Alejandro 👋'}
+                            {activeView === 'EMPRESA' && 'Panel de Talento y Retención 📊'}
+                            {activeView === 'COMERCIO' && 'Rendimiento de Negocio 🚀'}
+                        </h2>
+                        <p className="text-gray-400 text-sm mt-1">
+                            {activeView === 'PERSONA' && 'Tu Coach IA ha detectado 3 oportunidades de ahorro hoy.'}
+                            {activeView === 'EMPRESA' && 'El FWI global ha subido. Revisa el Morning Brief.'}
+                            {activeView === 'COMERCIO' && 'Tus campañas están superando al benchmark sectorial.'}
+                        </p>
+                       </div>
+                       <div className={`px-3 py-1 rounded-full text-xs font-bold border ${activeView === 'PERSONA' ? 'border-brand-primary/30 text-brand-primary bg-brand-primary/10' : activeView === 'EMPRESA' ? 'border-segment-empresa/30 text-segment-empresa bg-segment-empresa/10' : 'border-segment-socio/30 text-segment-socio bg-segment-socio/10'}`}>
+                           Actualizado: Hace 2 min
+                       </div>
                     </div>
 
-                    {/* PERSONA VIEW */}
+                    {/* PERSONA VIEW - (Includes: Radar 3UIT, Gamification, Coach IA, Manual Record, Marketplace VIP) */}
                     {activeView === 'PERSONA' && (
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in-up">
                             <div className="lg:col-span-2 bg-[#18181b] rounded-2xl border border-treevu-active p-6 flex flex-col">
                                 <div className="flex justify-between items-center mb-6">
                                     <div>
-                                        <h3 className="text-white font-bold text-lg">Gastos vs Presupuesto</h3>
-                                        <p className="text-xs text-gray-500">Octubre 2025</p>
+                                        <h3 className="text-white font-bold text-lg">Control de Gastos</h3>
+                                        <p className="text-xs text-gray-500">IA categorizando en tiempo real</p>
                                     </div>
                                     <div className="flex gap-4">
                                         <div className="flex items-center gap-2">
                                             <span className="w-2 h-2 rounded-full bg-brand-primary"></span>
-                                            <span className="text-[10px] text-gray-400 uppercase">Gasto</span>
+                                            <span className="text-[10px] text-gray-400 uppercase">Real</span>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <span className="w-2 h-2 rounded-full bg-treevu-active"></span>
-                                            <span className="text-[10px] text-gray-400 uppercase">Límite</span>
+                                            <span className="text-[10px] text-gray-400 uppercase">Meta</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex items-end justify-between gap-2 h-48 w-full pt-4 border-b border-treevu-active/30 pb-2">
                                     {[
-                                    { label: 'Lun', budget: '60%', expense: '35%', status: 'ok' },
-                                    { label: 'Mar', budget: '60%', expense: '45%', status: 'ok' },
-                                    { label: 'Mié', budget: '60%', expense: '25%', status: 'ok' },
-                                    { label: 'Jue', budget: '80%', expense: '75%', status: 'warn' },
-                                    { label: 'Vie', budget: '80%', expense: '45%', status: 'ok' },
-                                    { label: 'Sáb', budget: '100%', expense: '95%', status: 'warn' },
-                                    { label: 'Dom', budget: '50%', expense: '20%', status: 'ok' },
+                                    { label: 'Alim', budget: '60%', expense: '35%', status: 'ok' },
+                                    { label: 'Trans', budget: '60%', expense: '45%', status: 'ok' },
+                                    { label: 'Serv', budget: '60%', expense: '25%', status: 'ok' },
+                                    { label: 'Ocio', budget: '80%', expense: '75%', status: 'warn' },
+                                    { label: 'Salud', budget: '80%', expense: '45%', status: 'ok' },
+                                    { label: 'Ropa', budget: '100%', expense: '95%', status: 'warn' },
+                                    { label: 'Otros', budget: '50%', expense: '20%', status: 'ok' },
                                     ].map((d, i) => (
                                     <div key={i} className="flex flex-col items-center gap-2 flex-1 h-full justify-end group">
                                         <div className="flex items-end justify-center w-full gap-1 h-full px-1">
@@ -273,10 +303,18 @@ const Hero: React.FC = () => {
                                 </div>
                             </div>
 
+                            {/* Widget: Radar 3 UIT */}
                             <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-6 flex flex-col justify-between relative overflow-hidden">
                                 <div className="relative z-10">
-                                    <h3 className="text-white font-bold text-lg mb-1">Radar 3 UIT</h3>
-                                    <p className="text-xs text-gray-500 mb-4">Deducción I.R. 2025</p>
+                                    <div className="flex justify-between items-start">
+                                        <div>
+                                            <h3 className="text-white font-bold text-lg mb-1">Radar Fiscal</h3>
+                                            <p className="text-xs text-gray-500 mb-4">Meta: 3 UIT (S/ 15,450)</p>
+                                        </div>
+                                        <div className="bg-brand-primary/10 p-1.5 rounded-lg text-brand-primary">
+                                            <Scan className="w-4 h-4" />
+                                        </div>
+                                    </div>
                                     <div className="flex items-center justify-center py-4">
                                         <div className="relative w-32 h-32">
                                             <svg className="w-full h-full rotate-[-90deg]" viewBox="0 0 36 36">
@@ -285,43 +323,51 @@ const Hero: React.FC = () => {
                                             </svg>
                                             <div className="absolute inset-0 flex flex-col items-center justify-center">
                                                 <span className="text-xl font-bold text-white">62%</span>
-                                                <span className="text-[9px] text-gray-400 uppercase tracking-wide">Completado</span>
+                                                <span className="text-[9px] text-gray-400 uppercase tracking-wide">Avance</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="mt-2 bg-treevu-surface rounded-lg p-3 border border-treevu-active flex justify-between items-center">
-                                        <span className="text-xs text-gray-400">Proyectado</span>
+                                        <span className="text-xs text-gray-400">Devolución Est.</span>
                                         <span className="text-sm font-bold text-brand-primary">S/ 2,450</span>
                                     </div>
                                 </div>
                                 <div className="absolute top-0 right-0 w-40 h-40 bg-brand-primary/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
                             </div>
 
-                            <div className="lg:col-span-3 bg-[#18181b] rounded-2xl border border-treevu-active p-6">
+                            {/* Widget: Gamification Level */}
+                            <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-6 relative overflow-hidden flex items-center gap-4">
+                                <div className="w-12 h-12 bg-brand-accent/10 border border-brand-accent/30 rounded-full flex items-center justify-center text-brand-accent">
+                                    <Trophy className="w-6 h-6" />
+                                </div>
+                                <div className="flex-1">
+                                    <h4 className="text-white font-bold text-sm">Nivel 5: Estratega Fiscal</h4>
+                                    <div className="flex justify-between text-[10px] text-gray-500 mb-1">
+                                        <span>2,450 XP</span>
+                                        <span>Siguiente: Gurú</span>
+                                    </div>
+                                    <div className="w-full h-1.5 bg-treevu-active rounded-full overflow-hidden">
+                                        <div className="h-full bg-brand-accent w-[80%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             {/* Last Movements */}
+                            <div className="lg:col-span-2 bg-[#18181b] rounded-2xl border border-treevu-active p-6">
                                 <div className="flex justify-between items-center mb-4">
                                     <h3 className="text-white font-bold text-lg">Últimos Movimientos</h3>
-                                    <button className="text-xs text-brand-primary font-bold hover:underline">Ver todos</button>
+                                    <button className="text-xs text-brand-primary font-bold hover:underline">Ver Marketplace VIP</button>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="flex items-center p-3 rounded-xl bg-treevu-surface/50 border border-treevu-active hover:bg-treevu-surface transition-colors group">
                                         <div className="w-10 h-10 rounded-full bg-[#1f2937] flex items-center justify-center mr-3 border border-gray-700 group-hover:border-gray-600">
                                             <Car className="w-5 h-5 text-white" />
                                         </div>
                                         <div className="flex-1">
                                             <h4 className="text-sm font-bold text-white">Uber Ride</h4>
-                                            <p className="text-xs text-gray-500">Transporte • Hoy</p>
+                                            <p className="text-xs text-gray-500">Deducible (3 UIT) • Hoy</p>
                                         </div>
                                         <span className="text-sm font-bold text-white">- S/ 18.50</span>
-                                    </div>
-                                    <div className="flex items-center p-3 rounded-xl bg-treevu-surface/50 border border-treevu-active hover:bg-treevu-surface transition-colors group">
-                                        <div className="w-10 h-10 rounded-full bg-[#1f2937] flex items-center justify-center mr-3 border border-gray-700 group-hover:border-gray-600">
-                                            <Coffee className="w-5 h-5 text-white" />
-                                        </div>
-                                        <div className="flex-1">
-                                            <h4 className="text-sm font-bold text-white">Starbucks</h4>
-                                            <p className="text-xs text-gray-500">Alimentos • Ayer</p>
-                                        </div>
-                                        <span className="text-sm font-bold text-white">- S/ 14.90</span>
                                     </div>
                                     <div className="flex items-center p-3 rounded-xl bg-treevu-surface/50 border border-treevu-active hover:bg-treevu-surface transition-colors group">
                                         <div className="w-10 h-10 rounded-full bg-[#1f2937] flex items-center justify-center mr-3 border border-gray-700 group-hover:border-gray-600">
@@ -329,7 +375,7 @@ const Hero: React.FC = () => {
                                         </div>
                                         <div className="flex-1">
                                             <h4 className="text-sm font-bold text-white">Zara Retail</h4>
-                                            <p className="text-xs text-gray-500">Ropa • 24 Oct</p>
+                                            <p className="text-xs text-gray-500">No Deducible • 24 Oct</p>
                                         </div>
                                         <span className="text-sm font-bold text-white">- S/ 129.00</span>
                                     </div>
@@ -338,10 +384,10 @@ const Hero: React.FC = () => {
                         </div>
                     )}
 
-                    {/* EMPRESA VIEW */}
+                    {/* EMPRESA VIEW - (Includes: FWI, Churn Prediction, Segmentation, Morning Brief) */}
                     {activeView === 'EMPRESA' && (
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in-up">
-                            {/* KPI 1 */}
+                            {/* KPI 1: FWI */}
                             <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-5">
                                 <div className="flex justify-between items-start mb-2">
                                     <span className="text-xs font-bold text-gray-500 uppercase">FWI Global</span>
@@ -353,83 +399,92 @@ const Hero: React.FC = () => {
                                     +0.5 vs mes anterior
                                 </div>
                             </div>
-                            {/* KPI 2 */}
-                            <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-5">
+                            {/* KPI 2: Churn Risk */}
+                            <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-5 bg-gradient-to-br from-treevu-surface to-red-900/10">
                                 <div className="flex justify-between items-start mb-2">
-                                    <span className="text-xs font-bold text-gray-500 uppercase">Riesgo Fuga</span>
+                                    <span className="text-xs font-bold text-brand-danger uppercase">Riesgo de Fuga</span>
                                     <AlertTriangle className="w-4 h-4 text-brand-danger" />
                                 </div>
                                 <div className="text-3xl font-bold text-white mb-1">3.2%</div>
                                 <div className="flex items-center text-xs text-brand-primary">
                                     <ArrowRight className="w-3 h-3 rotate-[45deg] mr-1" />
-                                    -1.1% vs mes anterior
+                                    -1.1% (Mejora)
                                 </div>
                             </div>
-                             {/* KPI 3 */}
+                             {/* KPI 3: Engagement */}
                              <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-5">
                                 <div className="flex justify-between items-start mb-2">
-                                    <span className="text-xs font-bold text-gray-500 uppercase">Usuarios Activos</span>
+                                    <span className="text-xs font-bold text-gray-500 uppercase">Onboarding</span>
                                     <Users className="w-4 h-4 text-segment-empresa" />
                                 </div>
-                                <div className="text-3xl font-bold text-white mb-1">842</div>
+                                <div className="text-3xl font-bold text-white mb-1">92%</div>
                                 <div className="flex items-center text-xs text-gray-400">
-                                    92% de adopción
+                                    842 Usuarios Activos
                                 </div>
                             </div>
 
-                            {/* Retention Chart */}
+                            {/* Chart: Segmentation (Stress by Area) */}
                             <div className="lg:col-span-2 bg-[#18181b] rounded-2xl border border-treevu-active p-6">
                                 <div className="flex justify-between items-center mb-6">
-                                    <h3 className="text-white font-bold text-lg">Estrés Financiero por Área</h3>
+                                    <h3 className="text-white font-bold text-lg">Segmentación de Estrés Financiero</h3>
+                                    <div className="flex items-center gap-2">
+                                        <span className="w-2 h-2 bg-brand-danger rounded-full"></span>
+                                        <span className="text-xs text-gray-400">Alto Riesgo</span>
+                                    </div>
                                 </div>
                                 <div className="space-y-4">
                                     {[
-                                        { area: 'Ventas', val: 75, color: 'bg-brand-danger' },
-                                        { area: 'Tecnología', val: 45, color: 'bg-brand-accent' },
-                                        { area: 'Marketing', val: 30, color: 'bg-brand-primary' },
-                                        { area: 'Operaciones', val: 55, color: 'bg-brand-accent' },
+                                        { area: 'Ventas', val: 75, color: 'bg-brand-danger', risk: 'Crítico' },
+                                        { area: 'Tecnología', val: 45, color: 'bg-brand-accent', risk: 'Medio' },
+                                        { area: 'Marketing', val: 30, color: 'bg-brand-primary', risk: 'Bajo' },
+                                        { area: 'Operaciones', val: 55, color: 'bg-brand-accent', risk: 'Medio' },
                                     ].map((item, i) => (
-                                        <div key={i}>
-                                            <div className="flex justify-between text-xs text-gray-400 mb-1">
-                                                <span>{item.area}</span>
-                                                <span>{item.val}% Riesgo</span>
+                                        <div key={i} className="group cursor-pointer">
+                                            <div className="flex justify-between text-xs text-gray-400 mb-1 group-hover:text-white transition-colors">
+                                                <span className="font-bold">{item.area}</span>
+                                                <span>{item.risk} ({item.val}%)</span>
                                             </div>
-                                            <div className="w-full h-2 bg-treevu-active rounded-full overflow-hidden">
-                                                <div className={`h-full ${item.color}`} style={{width: `${item.val}%`}}></div>
+                                            <div className="w-full h-3 bg-treevu-active rounded-full overflow-hidden relative">
+                                                <div className={`h-full ${item.color} transition-all duration-500`} style={{width: `${item.val}%`}}></div>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            {/* Action List */}
-                            <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-6 relative overflow-hidden">
-                                <h3 className="text-white font-bold text-lg mb-4">Acciones Sugeridas</h3>
-                                <div className="space-y-3">
+                            {/* Widget: Morning Brief (AI Insights) */}
+                            <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-6 relative overflow-hidden flex flex-col">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="p-1.5 bg-segment-empresa/10 rounded text-segment-empresa">
+                                        <Zap className="w-4 h-4" />
+                                    </div>
+                                    <h3 className="text-white font-bold text-lg">Morning Brief</h3>
+                                </div>
+                                <div className="space-y-3 flex-1">
                                     <div className="p-3 rounded-lg bg-segment-empresa/10 border border-segment-empresa/30 text-xs text-gray-300">
-                                        <strong className="text-segment-empresa block mb-1">Alerta en Ventas</strong>
-                                        Lanzar campaña de anticipo de sueldo para equipo comercial.
+                                        <strong className="text-segment-empresa block mb-1">Predicción IA</strong>
+                                        El riesgo de fuga en Ventas aumentó por estrés de fin de Q. Activar "Adelanto de Sueldo" reduciría el riesgo en 15%.
                                     </div>
                                     <div className="p-3 rounded-lg bg-treevu-surface border border-treevu-active text-xs text-gray-400">
-                                        <strong className="text-white block mb-1">Onboarding</strong>
-                                        Recordar registro a 15 nuevos ingresos.
+                                        <strong className="text-white block mb-1">Acción Requerida</strong>
+                                        Aprobar presupuesto de bienestar Q4.
                                     </div>
                                 </div>
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-segment-empresa/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
                             </div>
                         </div>
                     )}
 
-                    {/* COMERCIO VIEW */}
+                    {/* COMERCIO VIEW - (Includes: Sales, ROAS, Benchmarking, Campaign Segmentation) */}
                     {activeView === 'COMERCIO' && (
                          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in-up">
+                             {/* KPIs Top Row */}
                              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-5 flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full bg-segment-socio/20 flex items-center justify-center text-segment-socio">
                                         <ShoppingBag className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="text-xs text-gray-500 font-bold uppercase">Ventas Totales</p>
+                                        <p className="text-xs text-gray-500 font-bold uppercase">Ventas Atribuidas</p>
                                         <p className="text-2xl font-bold text-white">S/ 24,500</p>
                                     </div>
                                 </div>
@@ -442,61 +497,103 @@ const Hero: React.FC = () => {
                                         <p className="text-2xl font-bold text-white">8.4x</p>
                                     </div>
                                 </div>
-                                <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-5 flex items-center gap-4">
+                                <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-5 flex items-center gap-4 bg-segment-socio/5 border-segment-socio/30">
                                     <div className="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent">
-                                        <Users className="w-6 h-6" />
+                                        <Globe className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="text-xs text-gray-500 font-bold uppercase">Clientes Nuevos</p>
-                                        <p className="text-2xl font-bold text-white">342</p>
+                                        <p className="text-xs text-gray-500 font-bold uppercase">Market Share</p>
+                                        <p className="text-2xl font-bold text-white">+12% vs Sector</p>
                                     </div>
                                 </div>
                              </div>
 
+                             {/* Chart: Benchmarking Sectorial */}
                              <div className="lg:col-span-2 bg-[#18181b] rounded-2xl border border-treevu-active p-6">
-                                <h3 className="text-white font-bold text-lg mb-6">Rendimiento de Campañas</h3>
-                                <div className="space-y-4">
+                                <div className="flex justify-between items-center mb-6">
+                                    <h3 className="text-white font-bold text-lg">Benchmarking Sectorial</h3>
+                                    <div className="flex gap-4 text-xs">
+                                        <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-segment-socio"></span> Tú</div>
+                                        <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-gray-600"></span> Sector</div>
+                                    </div>
+                                </div>
+                                <div className="h-32 flex items-end justify-between gap-4">
+                                     {/* Mock Chart Bars */}
+                                     {[
+                                         { label: 'Conversión', you: 80, avg: 40 },
+                                         { label: 'Ticket', you: 65, avg: 55 },
+                                         { label: 'Recurrencia', you: 90, avg: 60 },
+                                         { label: 'NPS', you: 75, avg: 50 },
+                                     ].map((item, i) => (
+                                         <div key={i} className="flex-1 flex flex-col justify-end items-center gap-1 h-full">
+                                             <div className="flex gap-1 items-end h-full w-full justify-center">
+                                                 <div style={{height: `${item.you}%`}} className="w-4 bg-segment-socio rounded-t-sm hover:opacity-80 transition-all"></div>
+                                                 <div style={{height: `${item.avg}%`}} className="w-4 bg-gray-700 rounded-t-sm"></div>
+                                             </div>
+                                             <span className="text-[10px] text-gray-500 uppercase">{item.label}</span>
+                                         </div>
+                                     ))}
+                                </div>
+                             </div>
+
+                             {/* Widget: Competitor Insights */}
+                             <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-6 relative overflow-hidden">
+                                 <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                                     <ShieldCheck className="w-5 h-5 text-segment-socio" /> Insights
+                                 </h3>
+                                 <div className="space-y-4">
+                                     <div className="p-3 bg-treevu-surface rounded-xl border border-treevu-active">
+                                         <div className="flex justify-between mb-1">
+                                            <span className="text-xs text-gray-400">Segmento "Jóvenes"</span>
+                                            <span className="text-xs text-brand-primary font-bold">Oportunidad</span>
+                                         </div>
+                                         <p className="text-sm text-white">Tu competencia agotó stock de Sneakers. Lanza oferta flash ahora.</p>
+                                     </div>
+                                     <div className="p-3 bg-treevu-surface rounded-xl border border-treevu-active">
+                                         <div className="flex justify-between mb-1">
+                                            <span className="text-xs text-gray-400">Pricing</span>
+                                            <span className="text-xs text-gray-400">Neutro</span>
+                                         </div>
+                                         <p className="text-sm text-white">Tus precios están 5% arriba del promedio de categoría.</p>
+                                     </div>
+                                 </div>
+                             </div>
+
+                             {/* Campaigns List with AI Tags */}
+                             <div className="lg:col-span-3 bg-[#18181b] rounded-2xl border border-treevu-active p-6">
+                                <h3 className="text-white font-bold text-lg mb-4">Campañas Activas con IA</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="flex items-center p-3 rounded-xl bg-treevu-surface/50 border border-treevu-active">
-                                        <div className="w-16 h-12 bg-gray-800 rounded-md mr-4"></div>
+                                        <div className="w-12 h-12 bg-segment-socio/20 text-segment-socio rounded-lg flex items-center justify-center mr-4">
+                                            <Zap className="w-6 h-6" />
+                                        </div>
                                         <div className="flex-1">
-                                            <h4 className="text-sm font-bold text-white">Flash Sale 30% OFF</h4>
-                                            <p className="text-xs text-gray-500">Segmento: Jóvenes Ahorradores</p>
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <h4 className="text-sm font-bold text-white">Flash Sale 30%</h4>
+                                                <span className="px-1.5 py-0.5 rounded bg-brand-accent/20 text-brand-accent text-[9px] font-bold uppercase">IA Segmentado</span>
+                                            </div>
+                                            <p className="text-xs text-gray-500">Target: Ahorradores High-Potential</p>
                                         </div>
                                         <div className="text-right">
                                             <div className="text-sm font-bold text-segment-socio">14.2% CTR</div>
-                                            <div className="text-xs text-gray-400">250 Redenciones</div>
                                         </div>
                                     </div>
                                     <div className="flex items-center p-3 rounded-xl bg-treevu-surface/50 border border-treevu-active">
-                                        <div className="w-16 h-12 bg-gray-800 rounded-md mr-4"></div>
+                                        <div className="w-12 h-12 bg-brand-primary/20 text-brand-primary rounded-lg flex items-center justify-center mr-4">
+                                            <Wallet className="w-6 h-6" />
+                                        </div>
                                         <div className="flex-1">
-                                            <h4 className="text-sm font-bold text-white">Cashback 15%</h4>
-                                            <p className="text-xs text-gray-500">Segmento: Ejecutivos High-Income</p>
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <h4 className="text-sm font-bold text-white">Cashback 15%</h4>
+                                                <span className="px-1.5 py-0.5 rounded bg-brand-primary/20 text-brand-primary text-[9px] font-bold uppercase">Retención</span>
+                                            </div>
+                                            <p className="text-xs text-gray-500">Target: Usuarios en Riesgo</p>
                                         </div>
                                         <div className="text-right">
                                             <div className="text-sm font-bold text-segment-socio">8.5% CTR</div>
-                                            <div className="text-xs text-gray-400">120 Redenciones</div>
                                         </div>
                                     </div>
                                 </div>
-                             </div>
-
-                             <div className="bg-[#18181b] rounded-2xl border border-treevu-active p-6 relative">
-                                 <h3 className="text-white font-bold text-lg mb-4">Perfil de Audiencia</h3>
-                                 <div className="space-y-4">
-                                     <div>
-                                         <div className="flex justify-between text-xs text-gray-400 mb-1"><span>Edad 25-35</span><span>60%</span></div>
-                                         <div className="w-full h-1.5 bg-treevu-active rounded-full"><div className="h-full bg-segment-socio w-[60%] rounded-full"></div></div>
-                                     </div>
-                                     <div>
-                                         <div className="flex justify-between text-xs text-gray-400 mb-1"><span>Ticket S/ 100+</span><span>30%</span></div>
-                                         <div className="w-full h-1.5 bg-treevu-active rounded-full"><div className="h-full bg-brand-primary w-[30%] rounded-full"></div></div>
-                                     </div>
-                                 </div>
-                                 <div className="mt-6 p-3 bg-segment-socio/10 border border-segment-socio/30 rounded-xl text-center">
-                                     <p className="text-xs text-segment-socio font-bold mb-1">Oportunidad Detectada</p>
-                                     <p className="text-xs text-gray-300">Crear promo para segmento "Padres" el fin de semana.</p>
-                                 </div>
                              </div>
                          </div>
                     )}
@@ -514,7 +611,7 @@ const Hero: React.FC = () => {
                           <p className="text-xs text-gray-300 leading-snug">
                             {activeView === 'PERSONA' && 'Detecté un gasto recurrente. Podrías ahorrar S/ 45/mes cancelando servicios inactivos.'}
                             {activeView === 'EMPRESA' && 'Alerta: El equipo de Tecnología muestra signos de burnout (FWI bajo). Sugiero activar viernes flex.'}
-                            {activeView === 'COMERCIO' && 'Insight: Los usuarios que compran café en la mañana tienen 3x más probabilidad de comprar almuerzo.'}
+                            {activeView === 'COMERCIO' && 'Insight: Tu competencia subió precios un 10%. Mantener los tuyos aumentará tu conversión un 15%.'}
                           </p>
                        </div>
                     </div>

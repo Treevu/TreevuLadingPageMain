@@ -2,8 +2,8 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Solutions from './components/Solutions';
-import TechStack from './components/TechStack';
 import Pricing from './components/Pricing';
+import RoiCalculator from './components/RoiCalculator';
 import FoundersForm from './components/FoundersForm';
 import Footer from './components/Footer';
 
@@ -14,8 +14,8 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <Solutions />
-        <TechStack />
         <Pricing />
+        <RoiCalculator />
         <FoundersForm />
       </main>
       <Footer />

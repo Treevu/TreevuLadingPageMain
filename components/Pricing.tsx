@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Sparkles } from 'lucide-react';
+import { Check, Sparkles, ShieldCheck, Database, Link } from 'lucide-react';
 import { PlanType, PricingPlan } from '../types';
 
 const plans: Record<PlanType, PricingPlan[]> = {
@@ -125,7 +125,7 @@ const Pricing: React.FC = () => {
         </div>
 
         {/* Cards Grid (Flexbox for centering) */}
-        <div className="flex flex-wrap justify-center gap-8 items-stretch">
+        <div className="flex flex-wrap justify-center gap-8 items-stretch mb-24">
           {plans[activeTab].map((plan, idx) => (
             <div 
               key={idx} 
@@ -175,6 +175,40 @@ const Pricing: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CORPORATE FAQ (OBJECTIONS HANDLING) */}
+        <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-display font-bold text-white text-center mb-10">Preguntas Frecuentes Corporativas</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-treevu-surface p-6 rounded-2xl border border-treevu-active">
+                    <div className="w-10 h-10 rounded-lg bg-segment-empresa/10 flex items-center justify-center mb-4 text-segment-empresa">
+                        <ShieldCheck className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-white font-bold mb-2">Privacidad de Datos</h4>
+                    <p className="text-sm text-treevu-muted">
+                        Garantizamos la anonimización total de datos financieros. No vendemos data de empleados a terceros bajo ninguna circunstancia.
+                    </p>
+                </div>
+                <div className="bg-treevu-surface p-6 rounded-2xl border border-treevu-active">
+                     <div className="w-10 h-10 rounded-lg bg-segment-empresa/10 flex items-center justify-center mb-4 text-segment-empresa">
+                        <Database className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-white font-bold mb-2">Seguridad SOC2</h4>
+                    <p className="text-sm text-treevu-muted">
+                        Toda la infraestructura opera con encriptación AES-256 en reposo y tránsito. Cumplimiento de estándares SOC2 en roadmap Q4.
+                    </p>
+                </div>
+                <div className="bg-treevu-surface p-6 rounded-2xl border border-treevu-active">
+                     <div className="w-10 h-10 rounded-lg bg-segment-empresa/10 flex items-center justify-center mb-4 text-segment-empresa">
+                        <Link className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-white font-bold mb-2">Integraciones</h4>
+                    <p className="text-sm text-treevu-muted">
+                        Nuestra API RESTful es compatible con SAP, Oracle, Buk y principales sistemas de nómina para lectura de datos sin fricción.
+                    </p>
+                </div>
+            </div>
         </div>
       </div>
     </section>
