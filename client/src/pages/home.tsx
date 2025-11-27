@@ -1,0 +1,523 @@
+import { Navbar } from "@/components/layout/Navbar";
+import { Hero } from "@/components/sections/Hero";
+import { Features } from "@/components/sections/Features";
+import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ArrowRight,
+  CheckCircle2,
+  TrendingUp,
+  BarChart3,
+  Zap,
+  Lock,
+  GitBranch,
+  Leaf,
+} from "lucide-react";
+import { Link } from "wouter";
+import { motion } from "framer-motion";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-background font-sans selection:bg-primary/20">
+      <Navbar />
+
+      <main>
+        <Hero />
+
+        {/* PROBLEM SECTION */}
+        <section className="py-24 bg-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,rgba(6,78,59,0.02)_50%,transparent_100%)] pointer-events-none" />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                El Problema
+              </h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+                Dos realidades invisibilizadas que impactan el P&L
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Column 1 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full border-2 border-slate-200 shadow-lg bg-gradient-to-br from-slate-50 to-slate-100/50">
+                  <CardHeader className="pb-4">
+                    <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+                      <Leaf className="h-6 w-6 text-amber-600" />
+                    </div>
+                    <CardTitle className="text-2xl text-slate-900">
+                      Brecha de Tiempo del Colaborador
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-slate-600 leading-relaxed">
+                      Pagan cada 15 o 30 días. La vida cobra{" "}
+                      <strong>diariamente:</strong> deudas, servicios,
+                      alimentos.
+                    </p>
+                    <div className="bg-white p-4 rounded-lg border border-slate-200 space-y-2">
+                      <p className="text-sm font-semibold text-slate-900">
+                        Resultado:
+                      </p>
+                      <ul className="space-y-2 text-sm text-slate-700">
+                        <li className="flex items-center gap-2">
+                          <span className="text-amber-600 font-bold">→</span>{" "}
+                          Deuda informal de corto plazo
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-amber-600 font-bold">→</span>{" "}
+                          Intereses hasta 25% mensual
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-amber-600 font-bold">→</span>{" "}
+                          Distracción mental = ausencias
+                        </li>
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Column 2 */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full border-2 border-slate-200 shadow-lg bg-gradient-to-br from-slate-50 to-slate-100/50">
+                  <CardHeader className="pb-4">
+                    <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mb-4">
+                      <AlertTriangle className="h-6 w-6 text-red-600" />
+                    </div>
+                    <CardTitle className="text-2xl text-slate-900">
+                      Ceguera de Riesgo Operativo
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-slate-600 leading-relaxed">
+                      RR.HH. y CFO no ven la correlación:{" "}
+                      <strong>
+                        salud financiera del equipo = predictor de rotación y
+                        ausencias.
+                      </strong>
+                    </p>
+                    <div className="bg-white p-4 rounded-lg border border-slate-200 space-y-2">
+                      <p className="text-sm font-semibold text-slate-900">
+                        Costo invisible:
+                      </p>
+                      <ul className="space-y-2 text-sm text-slate-700">
+                        <li className="flex items-center gap-2">
+                          <span className="text-red-600 font-bold">→</span>{" "}
+                          Rotación anual: 15-30% en operaciones
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-red-600 font-bold">→</span>{" "}
+                          Ausentismo: 3-5 días/mes por estrés
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-red-600 font-bold">→</span>{" "}
+                          Reemplazo: $15K-$45K por colaborador
+                        </li>
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* HOW IT WORKS SECTION */}
+        <section className="py-24 bg-slate-50 relative overflow-hidden">
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                Cómo Funciona Treevü (EWA Lite)
+              </h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+                Middleware de orquestación: 4 pasos, cero contacto con dinero
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              {[
+                {
+                  step: "01",
+                  title: "Cálculo Devengado Real",
+                  desc: "Integración con reloj checador. Devengado neto exacto por hora.",
+                  icon: Zap,
+                },
+                {
+                  step: "02",
+                  title: "Validación de Riesgo",
+                  desc: "EWA Engine aplica reglas corporativas. Límite max 50% devengado.",
+                  icon: Lock,
+                },
+                {
+                  step: "03",
+                  title: "Enrutamiento Seguro",
+                  desc: "Instrucción enrutada a tesorería. Dispersión directa desde empresa.",
+                  icon: GitBranch,
+                },
+                {
+                  step: "04",
+                  title: "Conciliación Automática",
+                  desc: "Retención en próxima nómina. Sin intermediación, sin fricción.",
+                  icon: CheckCircle2,
+                },
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <Card className="h-full border border-slate-200 shadow-sm hover:shadow-md transition-all relative">
+                      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-sm">
+                        {item.step}
+                      </div>
+                      <CardHeader className="pt-8">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                          <Icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <CardTitle className="text-lg text-slate-900">
+                          {item.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-slate-600 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-16 max-w-3xl mx-auto"
+            >
+              <Card className="border-2 border-primary bg-gradient-to-r from-primary/5 to-secondary/10 p-8">
+                <h3 className="font-heading text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <Leaf className="h-6 w-6 text-primary" />
+                  El Diferencial: Modelo "No-Fintech"
+                </h3>
+                <p className="text-slate-600 mb-4">
+                  No prestamos dinero. No tocamos capital. No asumimos riesgo
+                  crediticio. Treevü es{" "}
+                  <strong>middleware de orquestación pura</strong> que:
+                </p>
+                <ul className="space-y-2 text-slate-700">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span>
+                      <strong>Costo de fondeo = $0</strong> (no captamos
+                      depósitos, no pagamos intereses)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span>
+                      <strong>Riesgo regulatorio bajo</strong> (no estamos bajo
+                      IFPE/ITF, solo regulación de datos)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span>
+                      <strong>Capital escalable:</strong> el dinero viene de la
+                      empresa, no de fondos VC ni deuda
+                    </span>
+                  </li>
+                </ul>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* PRODUCTS SECTION - Keep existing Features component */}
+        <Features />
+
+        {/* DATA & MONETIZATION SECTION */}
+        <section className="py-24 bg-white relative overflow-hidden">
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                Score Treevü & Monetización
+              </h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+                Datos de comportamiento como activo estratégico
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+              {[
+                {
+                  title: "Financial Wellness Index (FWI)",
+                  desc: "Score propietario que mide capacidad de pago real, estabilidad y disciplina financiera en tiempo real.",
+                  metrics: [
+                    "Comportamiento de gasto",
+                    "Historial de retiros",
+                    "Patrones de salud financiera",
+                  ],
+                },
+                {
+                  title: "DaaS / APIaaS",
+                  desc: "Datos y APIs para partners: bancos, seguros, fintechs pueden acceder a scores y patrones de riesgo.",
+                  metrics: [
+                    "Validación de capacidad",
+                    "Segmentación de clientes",
+                    "Pricing dinámico",
+                  ],
+                },
+                {
+                  title: "Revenue Streams",
+                  desc: "Modelo SaaS + transaccional + comisiones en ecosystem de beneficios.",
+                  metrics: [
+                    "SaaS por empleado",
+                    "Fee por retiro/EWA",
+                    "Merchant comisiones",
+                  ],
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Card className="h-full border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <CardHeader>
+                      <CardTitle className="text-slate-900">
+                        {item.title}
+                      </CardTitle>
+                      <CardDescription className="text-slate-600 text-base mt-2">
+                        {item.desc}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2">
+                        {item.metrics.map((metric, j) => (
+                          <li
+                            key={j}
+                            className="flex items-center gap-2 text-sm text-slate-700"
+                          >
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                            {metric}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ROADMAP SECTION */}
+        <section className="py-24 bg-slate-50 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                Pensado para Escalar en LatAm
+              </h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+                Roadmap 24 meses: SaaS → DaaS → API Platform
+              </p>
+            </motion.div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-6">
+                {[
+                  {
+                    phase: "Ahora (Q4 2024 - Q2 2025)",
+                    title: "SaaS Core: B2E + B2B + B2B2B",
+                    items: [
+                      "App del Colaborador (wallet + coaching IA)",
+                      "Dashboard Corporativo (FWI, clusters de riesgo)",
+                      "Portal de Aliados (early payment, marketplace)",
+                    ],
+                    target: "HR, CFOs, medianas empresas (100-500 empleados)",
+                  },
+                  {
+                    phase: "Fase 2 (Q3 2025 - Q4 2025)",
+                    title: "DaaS: Data as a Service",
+                    items: [
+                      "Score API para partners financieros",
+                      "Risk Engine como servicio",
+                      "Monetización por consultas de validación",
+                    ],
+                    target: "Bancos, seguros, fintechs en LatAm",
+                  },
+                  {
+                    phase: "Fase 3 (2026+)",
+                    title: "Platform: Open API & Ecosystem",
+                    items: [
+                      "Marketplace de servicios financieros",
+                      "White-label solution para payroll software",
+                      "Gobernanza descentralizada de datos",
+                    ],
+                    target: "Global fintech infrastructure",
+                  },
+                ].map((roadmap, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <Card className="overflow-hidden border-l-4 border-l-primary shadow-sm hover:shadow-md transition-all">
+                      <CardHeader className="pb-3">
+                        <div className="flex items-start justify-between">
+                          <div>
+                            <Badge className="mb-2 bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">
+                              {roadmap.phase}
+                            </Badge>
+                            <CardTitle className="text-slate-900">
+                              {roadmap.title}
+                            </CardTitle>
+                          </div>
+                          <TrendingUp className="h-6 w-6 text-primary" />
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div>
+                            <h4 className="font-semibold text-slate-900 text-sm mb-3">
+                              Capacidades
+                            </h4>
+                            <ul className="space-y-2">
+                              {roadmap.items.map((item, j) => (
+                                <li
+                                  key={j}
+                                  className="flex items-start gap-2 text-sm text-slate-600"
+                                >
+                                  <ArrowRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="bg-primary/5 p-4 rounded-lg border border-primary/10">
+                            <h4 className="font-semibold text-slate-900 text-sm mb-2">
+                              Target: Audiencia
+                            </h4>
+                            <p className="text-sm text-slate-600">
+                              {roadmap.target}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action Section */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="container mx-auto px-4 text-center max-w-3xl">
+            <h2 className="font-heading text-4xl font-bold text-slate-900 mb-6">
+              Listo para transformar la <br />
+              <span className="text-primary">
+                cultura financiera de su empresa?
+              </span>
+            </h2>
+            <p className="text-lg text-slate-600 mb-10">
+              Únase a empresas en LatAm que están reduciendo rotación,
+              ausentismo y mejorando la vida de sus colaboradores con Treevü.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <a
+                href="https://treevu.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-white h-12 px-8 text-lg rounded-full shadow-lg shadow-primary/25"
+                >
+                  Comenzar Ahora
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="text-slate-600 hover:text-primary text-lg"
+              >
+                Hablar con Ventas
+              </Button>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-slate-500">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-500" />
+                Implementación en 2 semanas
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-500" />
+                Soporte Enterprise
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-500" />
+                Seguridad Bancaria
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+// Import missing icon
+import { AlertTriangle } from "lucide-react";

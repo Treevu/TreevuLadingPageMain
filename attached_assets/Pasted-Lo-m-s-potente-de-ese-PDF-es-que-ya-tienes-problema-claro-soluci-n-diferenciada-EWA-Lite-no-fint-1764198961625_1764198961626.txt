@@ -1,0 +1,31 @@
+Lo más potente de ese PDF es que ya tienes: problema claro, solución diferenciada (EWA Lite “no‑fintech”), ecosistema de 3 puntas y narrativa de datos/unicornio.[1]
+
+## Hero y propuesta de valor
+
+- Cambia el hero a algo tipo: “Plataforma de inteligencia de liquidez & riesgo operativo para nóminas de alta rotación” y debajo un subtítulo que hable de transformar estrés financiero en productividad.[1]
+- Añade 3 bullets de impacto: menos rotación, menos ausentismo, más productividad, con cifras de horas perdidas/mes y costo de reposición simplificadas para empresa.[1]
+
+## Sección problema
+
+- Crea un bloque “El problema” con dos columnas: “Brecha de tiempo del colaborador” (pagan cada 15/30, la vida cobra diario) y “Ceguera de riesgo de la empresa” (no ven cómo la salud financiera pega al P&L).[1]
+- Puedes incluir un pequeño gráfico o texto que explique que pequeñas brechas de liquidez empujan a deuda tóxica y disparan rotación y ausencias.[1]
+
+## Sección solución / cómo funciona
+
+- Añade “Cómo funciona Treevü (EWA Lite)” con 4 pasos muy visuales: Cálculo devengado en tiempo real → Validación reglas de riesgo → Enrutamiento seguro a tesorería → Conciliación automática en nómina.[1]
+- Refuerza el diferencial: “No prestamos, no tocamos el dinero: middleware de orquestación con cero costo de fondeo y bajo riesgo regulatorio”.[1]
+
+## Productos: 3 vistas (B2E, B2B, B2B2B)
+
+- Crea una sección “Lo que ve cada actor” con tres tarjetas: App del colaborador (coach financiero + IA + gamificación), Dashboard corporativo (FWI vs absentismo, clusters de riesgo) y Portal de aliados (early payment + marketplace dirigido).[1]
+- Si tienes capturas o mocks de cada interfaz, úsalos aquí con bullets cortos explicando el beneficio principal para cada rol.[1]
+
+## Datos, modelo de negocio y roadmap
+
+- Agrega un bloque “Data & monetización” donde expliques en 3 bullets: Score Treevü (capacidad de pago, estabilidad, disciplina), DaaS/APIaaS y principales revenue streams (SaaS por empleado, fee por retiro, merchant fees, puntos).[1]
+- Cierra con una franja “Pensado para escalar en LatAm” con el roadmap en 3 fases: SaaS ahora, DaaS en 12 meses, plataforma/API en 24 meses, orientado a HR, CFOs y partners financieros.[1]
+
+Si quieres, en un siguiente mensaje puedes pegar el copy actual de tu landing y lo reescribo sección por sección usando estas ideas.
+
+[1](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/30838531/65004d58-b2d6-4db0-be21-a4043a11ee2b/c071581a-81cd-45f0-9c8b-3d43c5a161b6__TREEV_PLATAFORMA_DE_INTELIGENCIA_DE_LIQUIDEZ__RIESGO_OPERATIVO.pdf)
+[2](https://replit.com/@acuba0103/LiquidityIntelligence)

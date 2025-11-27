@@ -1,0 +1,165 @@
+El dash de colaborador
+Panel de bienestar financiero personal donde se resumen tus hábitos, alertas y oportunidades de ahorro dentro de Treevü Proactive .
+Mensaje principal y puntos
+	Te da la bienvenida por tu nombre (“Hola, Alex”) y te recuerda que tus decisiones actuales impactan tu bienestar financiero futuro, junto con tus puntos acumulados (1250 pts, nivel A) como indicador de progreso en la plataforma .
+	El dash agrupa accesos a secciones de “Bienestar” (Mi Dashboard FWI, Metas y Ahorro, Asistente IA, Marketplace), “Finanzas” (Nómina On-Demand, Centro de Operaciones) y “Sistema” (Mi Perfil y Cuentas) .
+Alertas y recomendaciones
+	Muestra una alerta de “Gasto Hormiga Detectado” indicando que gastaste 45 dólares en café esta semana y te propone reducir ese gasto a la mitad, con botones para “Ver Detalle” o “Ignorar” .
+	Presenta una recomendación de “Potencia tu Ahorro”: si ahorras 20 dólares hoy, llegarías a tu meta de vacaciones una semana antes, con opciones para “Apartar $20” o “Ignorar” .
+Indicadores del dashboard
+	FWI Score: muestra tu puntaje FWI en 65 sobre 100, como medida de tu bienestar financiero actual .
+	Racha actual: indica que llevas 5 días de racha, probablemente cumpliendo hábitos o metas financieras .
+	Devengado disponible: enseña un monto de 450 dólares como “Devengado disp.”, que sería lo que tienes disponible para adelantar o usar desde tu nómina on-demand .
+y en este?
+Es una vista enfocada en tus metas de ahorro, no en el resumen general del bienestar financiero .
+Sección principal
+	Estás en “Metas Financieras” dentro del módulo de Bienestar, con tu puntaje de 1250 puntos y nivel A visible como indicador general de progreso en la app .
+	Hay un mensaje que dice que estás a 150 dólares de completar tu fondo de emergencia, dándote contexto rápido de tu avance global en metas de ahorro .
+Detalle de cada meta
+	Fondo de Emergencia: meta de 1000 dólares, con 350 ahorrados (35% completado) y fecha objetivo 2024-12-31 .
+	Vacaciones 2025: meta de 2500 dólares, con 400 ahorrados (16% completado) y fecha objetivo 2025-06-15 .
+y est?
+Es la vista de “Treevü Brain”, el asistente inteligente que analiza tus finanzas y responde preguntas sobre tu situación económica semanal .
+Qué muestra esta pantalla
+	Aparece tu puntaje y nivel (1250 pts, nivel A) y un mensaje de bienvenida: Treevü Brain te dice que ya analizó tus finanzas de esta semana y se ofrece a ayudarte .
+	Hay una caja de texto donde puedes escribir tus preguntas (“Pregunta a Treevü Brain…”) y un botón o acción para “Explicar”, orientado a que el asistente te dé explicaciones sobre tus gastos, ingresos o recomendaciones .
+este?
+Es la vista de “Nómina On-Demand”, donde ves cuánto sueldo tienes devengado y puedes pedir adelantos, junto con el historial de solicitudes anteriores .
+Información principal
+	Muestra tu salario devengado disponible, en este caso 450 dólares, y un botón de “Solicitar Adelanto” para pedir parte de ese monto antes de la fecha de pago .
+	Indica tus días trabajados en el periodo (12 de 30), la fecha del próximo corte (15 Oct) y el límite EWA de 50%, que es el máximo porcentaje de tu sueldo que puedes adelantar .
+Historial de adelantos
+	Aparecen solicitudes de adelanto anteriores con fecha, estado “Enviado a Banco”, el monto adelantado (por ejemplo, 100 y 50 dólares) y la tarifa cobrada en cada operación (2.50 dólares) .
+	Hay un botón “Explicar” para que el sistema aclare los movimientos o los cálculos de tu nómina bajo demanda .
+este?
+Es la vista del “Centro de Operaciones”, donde registras movimientos diarios y ves su impacto en tu bienestar financiero en tiempo real .
+Qué puedes hacer aquí
+	Arriba se muestra tu puntaje y nivel (1250 pts, nivel A) y un campo de entrada para anotar nuevos gastos, con un ejemplo tipo “$45 en Gasolina Shell” .
+	La idea es que registres consumos manualmente y luego pidas al sistema que los “Explique” para entender su efecto en tu score o en tus metas .
+Historial operativo
+	Se ve una lista de gastos recientes con categoría, fecha relativa y monto: Supermercado Día (Alimentos, hoy, 84.50), Netflix (Suscripción, ayer, 15.99), Shell (Transporte, ayer, 45.00), Starbucks (Ocio, hace 2 días, 8.50) y Farmacia Cruz Verde (Salud, hace 3 días, 32.10) .
+	Cada movimiento está clasificado por tipo de gasto, lo que ayuda a identificar patrones como ocio, transporte o suscripciones que pueden afectar tu presupuesto .
+este?
+Es la vista de “Mi Perfil”, donde configuras tus preferencias de adelantos de nómina y ves la cuenta donde se depositan los desembolsos .
+Preferencias EWA
+	En “Preferencias EWA (Auto-Regulación)” eliges tu “Límite Personal de Retiro”, que ahora está en 80% del disponible, mediante una barra deslizante entre 10% y 100% .
+	Este límite restringe voluntariamente cuánto puedes retirar por Nómina On-Demand, aunque la empresa permita un porcentaje mayor, para ayudarte a no excederte .
+Cuenta de nómina
+	En “Cuenta de Nómina” se muestra la cuenta destino para los desembolsos de la empresa, en este caso una cuenta Chase Bank terminada en 4492, marcada como “Verificado por RR.HH.” .
+	Tienes la opción de “Solicitar Cambio” de esa cuenta y un botón “Explicar” para entender mejor cómo funciona esta configuración de perfil .
+Dashboard rrhh.
+
+El dashboard muestra un panel de “Inteligencia Corporativa” enfocado en el bienestar financiero de los colaboradores y su impacto en el riesgo operativo.
+Secciones principales
+	Menú lateral con módulos: “Dashboard Ejecutivo”, “Red de Beneficios”, “Gestión Solicitudes”, “Conciliación (Finanzas)”, “Gestión TreePoints” y “Configuración”.
+	Título del módulo actual: “Inteligencia Corporativa” con un análisis de correlación “Bienestar Financiero vs Riesgo Operativo”.
+Filtros del sistema
+	Filtros por Departamento: Todos, Ventas, Logística, Tecnología (IT), Legal, Dirección y Finanzas.
+	Filtros por modalidad: Todas, Presencial, Híbrido, Remoto.
+	Filtros por “Edades” (seniority): Junior (0–2 años), Mid (2–5 años), Senior (5+ años).
+Indicadores clave
+	FWI promedio: 69 puntos, con variación “+4 pts” y opción para ver la tendencia.
+	Ahorro proyectado: 37.5k al mes, con opción para ver el desglose del ahorro.
+	Adopción de EWA: 80% con opción para ver la frecuencia de uso.
+	Engagement: 92% con aumento de 12% y opción para ver la distribución.
+Puente de rendimiento
+	Muestra la correlación entre bienestar financiero y riesgo operativo con un coeficiente de correlación r=-0.93.
+	Insight: colaboradores con FWI menor a 50 tienen 5 veces más absentismo, con ejes que van de 0 a 100 puntos de FWI y de 0 a 20 días de absentismo.
+Focos de riesgo (clusters)
+	Sección de “Grupos con FWI < 50 que requieren intervención”.
+	Ejemplos visibles:
+	Ventas: nivel de riesgo “MEDIUM”, 1 persona en riesgo y pérdida proyectada de 3.5k, con botón “Intervenir”.
+	Logística: nivel “MEDIUM”, 1 persona en riesgo y pérdida proyectada de 3.5k, también con acción de “Intervenir”.
+y este?
+Es un dashboard operativo de “Gestión de Solicitudes (Inbox)” donde RR.HH. o Finanzas revisan y procesan las instrucciones de pago que Treevü enruta automáticamente.
+Estructura del módulo
+	Forma parte del menú OPERATIVO, dentro de “Gestión de Solicitudes”.
+	Encabezado: “Gestión de Solicitudes (Inbox)” con el subtítulo “Instrucciones de pago enrutadas por Treevü.”
+Funciones principales
+	Botón “Descargar Payload Bancario”, pensado para exportar un archivo con las órdenes de pago al banco.
+	Tabla con columnas: ID SOLICITUD, COLABORADOR, PROPÓSITO, BANCO DESTINO, MONTO y ACCIÓN.
+Ejemplos de solicitudes
+	REQ-8821: colaboradora “Sarah Connor (EMP-001)”, propósito “General”, banco destino “Chase ****4492”, monto 150.00, con acciones “Rechazar” o “Desembolsar”.
+	REQ-8822: colaborador “Mike Ross (EMP-042)”, propósito “Aporte Ahorro”, destino “Internal Savings”, monto 20.00, también con opciones “Rechazar” o “Desembolsar”.
+este?
+Es un dashboard de Conciliación Financiera que muestra cómo están los adelantos y descuentos vinculados a la nómina, para verificar que “el sistema está saludable”.
+Bloques que ves
+	Sección “Cuentas x Cobrar (Activo)”: indica los adelantos de nómina que aún están pendientes de recuperar, por ejemplo 985.50 en adelantos.
+	Texto “Liquidación estimada: 15 Oct”: fecha en la que, con la próxima nómina, se deberían saldar esos adelantos pendientes.
+Ajustes en nómina
+	Bloque “Total a Descontar – Ajuste nómina próximo ciclo”: muestra cuánto se va a descontar en el siguiente pago de nómina (1,013.00 en el ejemplo).
+	Aclara que ese total incluye 27.50 en tarifas, para que Finanzas y RR.HH. concilien lo que se descuenta vs. lo que está en cuentas por cobrar.
+este
+Es un dashboard de Gestión de TreePoints, para administrar incentivos y medir su impacto en el FWI (Financial Wellness Index) por área.
+Indicadores principales
+	“Sistema saludable” con total de puntos emitidos: 125,000 pts, impacto en FWI de +5.2 puntos.
+	Tasa de canje: 68%, con mensaje de “Alta participación”, y utilización de presupuesto en 45%.
+Mapa de calor por área
+	Tabla que cruza Puntos Emitidos, Tasa de Canje, FWI Promedio e Impacto por departamento (Ventas, Logística, IT, Dirección, Legal, Finanzas).
+	Ejemplos: Ventas (45,000 pts, 85% canje, FWI 52, impacto HIGH), Logística (30,000 pts, 70% canje, FWI 48, impacto HIGH), IT (15,000 pts, 40% canje, FWI 78, impacto LOW).
+Acciones recomendadas
+	“Bono Retención: IT”: FWI alto pero baja redención, se sugiere incentivar el uso de puntos, con botón “Crear Campaña”.
+	“Refuerzo: Logística”: alto impacto detectado, recomendación de emitir bono de 500 pts para mantener la tendencia, con botón “Emitir Ahora”.
+este
+Es la pantalla de Configuración de Cuenta, donde se revisa que el sistema esté “saludable” y se ajustan integraciones y reglas de cálculo.
+Secciones visibles
+	Menú lateral: “Dashboard Ejecutivo”, “Red de Beneficios”, “Gestión Solicitudes”, “Conciliación (Finanzas)”, “Gestión TreePoints” y, en SISTEMA, “Configuración”.
+	Encabezado: “Configuración de Cuenta” con un estado general “Sistema Saludable”.
+Integraciones y reglas
+	“Integración de Datos (Data Bridge)”: muestra el estado de la conexión con el HRIS y las reglas del motor de cálculo.
+	“Mapeo de Departamentos”: indica “4 Centros de Costo detectados” y un botón “Verificar” para revisar el mapeo.
+	“Ingesta de Nómina (EWA Rules)”: sección para ver y ajustar reglas de cálculo y límites de EWA, con botón “Configurar” y opción “Explicar”.
+
+Dash merchants
+Este dashboard contiene la vista principal del “Portal de Aliados” para un comercio (en el ejemplo, Whole Foods Market) con métricas clave de ingresos, rendimiento y clientes.
+Datos del comercio
+	Nombre del comercio, ID de comercio (WF-8821) y nivel de socio (Nivel Oro).
+	Próximo pago a procesar con su monto y estado (“Listo para procesar”).
+Métricas financieras
+	Ingresos totales con variación porcentual (+12%) y acceso a desglose detallado.
+	Comisiones pendientes con opción de ver el detalle de la deuda.
+Rendimiento y conversión
+	Tasa de conversión (4.8%) con cambio reciente (+0.5%) y acceso a la tendencia.
+	Módulo de “Analítica de Rendimiento” con gráfico de Volumen de ventas vs. tráfico por días (7D/30D).!
+Fidelización y puntos
+	“TreePoints canjeados” (842k) con indicación de alto volumen y acceso a análisis de ROI.
+Perfil del cliente
+	“Ventas por Segmento de Bienestar (FWI)” con distribución de clientes en FWI Alto, Medio y Bajo, indicando porcentajes y notas sobre crecimiento/estabilidad/necesidades.
+y este?
+Este segundo “dash” es la sección de “Ofertas Activas” dentro del mismo Portal de Aliados, enfocada en gestionar campañas y promociones del comercio.
+Qué muestra esta vista
+	El bloque “Ofertas Activas” con texto guía “Gestiona tus campañas y promociones” y un botón “Crear Nueva Oferta” para lanzar nuevas campañas.
+	Una tabla de ofertas con columnas: Título de la oferta, Tipo (Evergreen, Flash), Descuento, Segmento, Expiración, Canjes, Estado y Acciones.
+Ejemplos de ofertas
+	“Canasta Orgánica”: tipo Evergreen, descuento “$20 OFF”, segmento “Todos”, expiración indefinida, 412 canjes, estado Activa.
+	“Vitaminas Premium”: tipo Flash, promo “2x1”, segmento “FWI Alto”, expiración “24h Restantes”, 128 canjes, estado Activa.
+este?
+Esta vista es el módulo de “Pagos & Anticipos” del Portal de Aliados, donde el comercio ve su balance disponible, su composición y el historial de desembolsos.
+Balance disponible
+	Muestra “Balance Disponible” de $4,250.00, que es lo que el comercio puede retirar o pedir como anticipo.
+	Incluye un botón “Solicitar Anticipo” para adelantar parte de ese saldo.
+Componentes del saldo
+	“Comisiones por Ventas”: $3,800.00, corresponde a lo generado por ventas que Treevü debe liquidar al comercio.
+	“Reembolso TreePoints”: $450.00, monto que Treevü devuelve al comercio por puntos canjeados por sus clientes.
+Historial de desembolsos
+	Tabla con ID de transacción, fecha, concepto, monto y estado, para hacer trazabilidad de pagos realizados.
+	Ejemplos: TX-9926 (Liquidación Q4 Final, $5,100.00, Pagado) y TX-9925 (Comisiones Ventas, $4,850.25, Pagado).
+este?
+Este “dash” es el módulo de Gestión de Puntos, donde el comercio administra los puntos TreePoints que usa como incentivos y ve su impacto en ventas y ROI.
+Saldos y rendimiento
+	Muestra el Balance disponible de 15,000 puntos, con una referencia de que alcanza para aproximadamente 3 campañas.
+	Indica Ventas atribuidas por 9,200.5 dólares y un ROI de 320%, conectando los puntos usados con las ventas generadas.
+	Muestra el Total de puntos distribuidos (35,000 pts), es decir, todos los puntos que ya se han entregado a clientes.
+Acciones principales
+	Botón “Comprar Puntos” para recargar el saldo y poder lanzar nuevas campañas de incentivos.
+Historial de movimientos
+	Tabla con fecha, tipo, detalle y cantidad de puntos, para ver entradas y salidas de puntos.
+	Ejemplos: hoy se asignan −5,000 pts a la “Campaña Flash Octubre” y el 01 Oct se compran +20,000 pts del “Paquete Growth”.
+este?
+Este módulo es la sección de Configuración de Cobro, donde el comercio define cómo y a dónde Treevü le paga el dinero.
+Qué configura este dash
+	Datos bancarios: banco (Chase Bank), número de cuenta enmascarado, routing y estado de verificación de la cuenta (“Cuenta Verificada”).
+	Frecuencia de pago: periodicidad automática de liquidaciones y anticipos, en el ejemplo “Semanal (Viernes)”.
+Notificaciones y cumplimiento
+	Correo de notificaciones: dirección donde llegan los comprobantes de pago, aquí finance@wholefoods.com.
+	Seguridad/KYB: estado de verificación del negocio (“KYB Verificado”) y acceso a ver la documentación cargada.
