@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { 
   LayoutDashboard, 
   Smartphone, 
@@ -37,6 +38,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import { RegistrationModal } from "@/components/modals/RegistrationModal";
 
 // B2E Content (Collaborator)
 const b2eTabs = [
@@ -452,6 +454,8 @@ const item = {
 };
 
 export function Features() {
+  const [demoModalOpen, setDemoModalOpen] = useState(false);
+
   return (
     <section id="solutions" className="py-24 bg-slate-50 relative overflow-hidden">
       {/* Decorative background elements */}
@@ -568,8 +572,12 @@ export function Features() {
                       ← Cerrar
                     </Button>
                   </DialogClose>
-                  <Button size="sm" className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20">
-                    Agendar Demo Completa <ArrowRight className="ml-2 h-3 w-3" />
+                  <Button 
+                    size="sm" 
+                    onClick={() => setDemoModalOpen(true)}
+                    className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20"
+                  >
+                    Solicitar Demo <ArrowRight className="ml-2 h-3 w-3" />
                   </Button>
                 </div>
               </DialogContent>
@@ -626,6 +634,7 @@ export function Features() {
           </div>
         </motion.div>
       </div>
+      <RegistrationModal open={demoModalOpen} onOpenChange={setDemoModalOpen} />
     </section>
   );
 }

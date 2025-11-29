@@ -3,9 +3,17 @@ import { Leaf, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { AboutModal } from "@/components/modals/AboutModal";
+import { BlogModal } from "@/components/modals/BlogModal";
+import { ContactModal } from "@/components/modals/ContactModal";
+import { RegistrationModal } from "@/components/modals/RegistrationModal";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [blogOpen, setBlogOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
 
   const navLinks = [
     { name: "Soluciones", href: "#solutions" },
@@ -39,17 +47,41 @@ export function Navbar() {
               </a>
             ))}
           </div>
+          <div className="flex items-center gap-2">
+            <Button 
+              variant="ghost" 
+              onClick={() => setAboutOpen(true)}
+              className="text-slate-600 hover:text-primary text-sm"
+            >
+              Sobre Nosotros
+            </Button>
+            <Button 
+              variant="ghost" 
+              onClick={() => setBlogOpen(true)}
+              className="text-slate-600 hover:text-primary text-sm"
+            >
+              Blog
+            </Button>
+            <Button 
+              variant="ghost" 
+              onClick={() => setContactOpen(true)}
+              className="text-slate-600 hover:text-primary text-sm"
+            >
+              Contacto
+            </Button>
+          </div>
           <div className="flex items-center gap-3">
             <Link href="/dashboard">
               <Button variant="ghost" className="text-slate-600 hover:text-primary hover:bg-primary/5">
                 Login
               </Button>
             </Link>
-            <Link href="/dashboard">
-              <Button className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20">
-                Solicitar Demo
-              </Button>
-            </Link>
+            <Button 
+              onClick={() => setDemoOpen(true)}
+              className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20"
+            >
+              Solicitar Demo
+            </Button>
           </div>
         </div>
 
@@ -74,21 +106,50 @@ export function Navbar() {
                   </a>
                 ))}
                 <div className="h-px bg-slate-100 my-2" />
+                <Button 
+                  variant="ghost" 
+                  onClick={() => { setAboutOpen(true); setIsOpen(false); }}
+                  className="w-full justify-start"
+                >
+                  Sobre Nosotros
+                </Button>
+                <Button 
+                  variant="ghost" 
+                  onClick={() => { setBlogOpen(true); setIsOpen(false); }}
+                  className="w-full justify-start"
+                >
+                  Blog
+                </Button>
+                <Button 
+                  variant="ghost" 
+                  onClick={() => { setContactOpen(true); setIsOpen(false); }}
+                  className="w-full justify-start"
+                >
+                  Contacto
+                </Button>
+                <div className="h-px bg-slate-100 my-2" />
                 <Link href="/dashboard" onClick={() => setIsOpen(false)}>
                   <Button variant="outline" className="w-full justify-start">
                     Login Corporativo
                   </Button>
                 </Link>
-                <Link href="/dashboard" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full bg-primary text-white">
-                    Solicitar Demo
-                  </Button>
-                </Link>
+                <Button 
+                  onClick={() => { setDemoOpen(true); setIsOpen(false); }}
+                  className="w-full bg-primary text-white"
+                >
+                  Solicitar Demo
+                </Button>
               </div>
             </SheetContent>
           </Sheet>
         </div>
       </div>
+
+      {/* Modals */}
+      <AboutModal open={aboutOpen} onOpenChange={setAboutOpen} />
+      <BlogModal open={blogOpen} onOpenChange={setBlogOpen} />
+      <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
+      <RegistrationModal open={demoOpen} onOpenChange={setDemoOpen} />
     </nav>
   );
 }

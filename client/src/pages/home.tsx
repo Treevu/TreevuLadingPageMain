@@ -1,144 +1,143 @@
+import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Features } from "@/components/sections/Features";
 import { Footer } from "@/components/layout/Footer";
+import { RegistrationModal } from "@/components/modals/RegistrationModal";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  ArrowRight,
-  CheckCircle2,
-  TrendingUp,
-  BarChart3,
-  Zap,
-  Lock,
-  GitBranch,
-  Leaf,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, TrendingUp, BarChart3, Zap, Lock, GitBranch, Leaf } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const [demoModalOpen, setDemoModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20">
       <Navbar />
-
+      
       <main>
         <Hero />
 
         {/* PROBLEM SECTION */}
-        <section className="py-24 bg-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,rgba(6,78,59,0.02)_50%,transparent_100%)] pointer-events-none" />
+        <section className="py-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl -z-10" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl -z-10" />
+          
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-20"
             >
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-                El Problema
-              </h2>
-              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-                Dos realidades invisibilizadas que impactan el P&L
-              </p>
+              <h2 className="font-heading text-5xl md:text-6xl font-bold text-white mb-4">El Problema</h2>
+              <p className="text-slate-300 text-xl max-w-2xl mx-auto font-light">Dos realidades invisibilizadas que impactan el P&L</p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* Column 1 */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* Column 1 - Brecha de Tiempo */}
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="group"
               >
-                <Card className="h-full border-2 border-slate-200 shadow-lg bg-gradient-to-br from-slate-50 to-slate-100/50">
-                  <CardHeader className="pb-4">
-                    <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
-                      <Leaf className="h-6 w-6 text-amber-600" />
+                <div className="relative h-full p-8 rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl hover:border-amber-500/50 transition-all duration-300 shadow-xl hover:shadow-amber-500/20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="relative z-10 space-y-6">
+                    {/* Icon */}
+                    <div className="inline-flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Leaf className="h-8 w-8 text-amber-400" />
+                      </div>
                     </div>
-                    <CardTitle className="text-2xl text-slate-900">
+
+                    {/* Title */}
+                    <h3 className="font-heading text-2xl font-bold text-white leading-tight">
                       Brecha de Tiempo del Colaborador
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-slate-600 leading-relaxed">
-                      Pagan cada 15 o 30 días. La vida cobra{" "}
-                      <strong>diariamente:</strong> deudas, servicios,
-                      alimentos.
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-slate-300 leading-relaxed text-base">
+                      Pagan cada 15 o 30 días. La vida cobra <span className="text-amber-300 font-semibold">diariamente:</span> deudas, servicios, alimentos.
                     </p>
-                    <div className="bg-white p-4 rounded-lg border border-slate-200 space-y-2">
-                      <p className="text-sm font-semibold text-slate-900">
-                        Resultado:
-                      </p>
-                      <ul className="space-y-2 text-sm text-slate-700">
-                        <li className="flex items-center gap-2">
-                          <span className="text-amber-600 font-bold">→</span>{" "}
-                          Deuda informal de corto plazo
+
+                    {/* Results Box */}
+                    <div className="space-y-3 pt-4 border-t border-slate-700/50">
+                      <p className="text-xs font-mono text-amber-400 uppercase tracking-widest">Resultado:</p>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <span className="text-amber-400 font-bold mt-1">→</span>
+                          <span className="text-slate-300 text-sm">Deuda informal de corto plazo</span>
                         </li>
-                        <li className="flex items-center gap-2">
-                          <span className="text-amber-600 font-bold">→</span>{" "}
-                          Intereses hasta 25% mensual
+                        <li className="flex items-start gap-3">
+                          <span className="text-amber-400 font-bold mt-1">→</span>
+                          <span className="text-slate-300 text-sm">Intereses hasta 25% mensual</span>
                         </li>
-                        <li className="flex items-center gap-2">
-                          <span className="text-amber-600 font-bold">→</span>{" "}
-                          Distracción mental = ausencias
+                        <li className="flex items-start gap-3">
+                          <span className="text-amber-400 font-bold mt-1">→</span>
+                          <span className="text-slate-300 text-sm">Distracción mental = ausencias</span>
                         </li>
                       </ul>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </motion.div>
 
-              {/* Column 2 */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
+              {/* Column 2 - Ceguera de Riesgo */}
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="group"
               >
-                <Card className="h-full border-2 border-slate-200 shadow-lg bg-gradient-to-br from-slate-50 to-slate-100/50">
-                  <CardHeader className="pb-4">
-                    <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mb-4">
-                      <AlertTriangle className="h-6 w-6 text-red-600" />
+                <div className="relative h-full p-8 rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl hover:border-red-500/50 transition-all duration-300 shadow-xl hover:shadow-red-500/20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="relative z-10 space-y-6">
+                    {/* Icon */}
+                    <div className="inline-flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-red-500/20 to-red-600/10 border border-red-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <AlertTriangle className="h-8 w-8 text-red-400" />
+                      </div>
                     </div>
-                    <CardTitle className="text-2xl text-slate-900">
+
+                    {/* Title */}
+                    <h3 className="font-heading text-2xl font-bold text-white leading-tight">
                       Ceguera de Riesgo Operativo
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-slate-600 leading-relaxed">
-                      RR.HH. y CFO no ven la correlación:{" "}
-                      <strong>
-                        salud financiera del equipo = predictor de rotación y
-                        ausencias.
-                      </strong>
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-slate-300 leading-relaxed text-base">
+                      RR.HH. y CFO no ven la correlación: <span className="text-red-300 font-semibold">salud financiera = predictor de rotación y ausencias.</span>
                     </p>
-                    <div className="bg-white p-4 rounded-lg border border-slate-200 space-y-2">
-                      <p className="text-sm font-semibold text-slate-900">
-                        Costo invisible:
-                      </p>
-                      <ul className="space-y-2 text-sm text-slate-700">
-                        <li className="flex items-center gap-2">
-                          <span className="text-red-600 font-bold">→</span>{" "}
-                          Rotación anual: 15-30% en operaciones
+
+                    {/* Results Box */}
+                    <div className="space-y-3 pt-4 border-t border-slate-700/50">
+                      <p className="text-xs font-mono text-red-400 uppercase tracking-widest">Costo invisible:</p>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <span className="text-red-400 font-bold mt-1">→</span>
+                          <span className="text-slate-300 text-sm">Rotación anual: 15-30% en operaciones</span>
                         </li>
-                        <li className="flex items-center gap-2">
-                          <span className="text-red-600 font-bold">→</span>{" "}
-                          Ausentismo: 3-5 días/mes por estrés
+                        <li className="flex items-start gap-3">
+                          <span className="text-red-400 font-bold mt-1">→</span>
+                          <span className="text-slate-300 text-sm">Ausentismo: 3-5 días/mes por estrés</span>
                         </li>
-                        <li className="flex items-center gap-2">
-                          <span className="text-red-600 font-bold">→</span>{" "}
-                          Reemplazo: $15K-$45K por colaborador
+                        <li className="flex items-start gap-3">
+                          <span className="text-red-400 font-bold mt-1">→</span>
+                          <span className="text-slate-300 text-sm">Reemplazo: $15K-$45K por colaborador</span>
                         </li>
                       </ul>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -147,18 +146,14 @@ export default function Home() {
         {/* HOW IT WORKS SECTION */}
         <section className="py-24 bg-slate-50 relative overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-                Cómo Funciona Treevü (EWA Lite)
-              </h2>
-              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-                Middleware de orquestación: 4 pasos, cero contacto con dinero
-              </p>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">Cómo Funciona Treevü (EWA Lite)</h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto">Middleware de orquestación: 4 pasos, cero contacto con dinero</p>
             </motion.div>
 
             <div className="grid md:grid-cols-4 gap-4 max-w-6xl mx-auto">
@@ -167,26 +162,26 @@ export default function Home() {
                   step: "01",
                   title: "Cálculo Devengado Real",
                   desc: "Integración con reloj checador. Devengado neto exacto por hora.",
-                  icon: Zap,
+                  icon: Zap
                 },
                 {
                   step: "02",
                   title: "Validación de Riesgo",
                   desc: "EWA Engine aplica reglas corporativas. Límite max 50% devengado.",
-                  icon: Lock,
+                  icon: Lock
                 },
                 {
                   step: "03",
                   title: "Enrutamiento Seguro",
                   desc: "Instrucción enrutada a tesorería. Dispersión directa desde empresa.",
-                  icon: GitBranch,
+                  icon: GitBranch
                 },
                 {
                   step: "04",
                   title: "Conciliación Automática",
                   desc: "Retención en próxima nómina. Sin intermediación, sin fricción.",
-                  icon: CheckCircle2,
-                },
+                  icon: CheckCircle2
+                }
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -205,14 +200,10 @@ export default function Home() {
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                           <Icon className="h-5 w-5 text-primary" />
                         </div>
-                        <CardTitle className="text-lg text-slate-900">
-                          {item.title}
-                        </CardTitle>
+                        <CardTitle className="text-lg text-slate-900">{item.title}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm text-slate-600 leading-relaxed">
-                          {item.desc}
-                        </p>
+                        <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -220,7 +211,7 @@ export default function Home() {
               })}
             </div>
 
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -232,31 +223,20 @@ export default function Home() {
                   El Diferencial: Modelo "No-Fintech"
                 </h3>
                 <p className="text-slate-600 mb-4">
-                  No prestamos dinero. No tocamos capital. No asumimos riesgo
-                  crediticio. Treevü es{" "}
-                  <strong>middleware de orquestación pura</strong> que:
+                  No prestamos dinero. No tocamos capital. No asumimos riesgo crediticio. Treevü es <strong>middleware de orquestación pura</strong> que:
                 </p>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>Costo de fondeo = $0</strong> (no captamos
-                      depósitos, no pagamos intereses)
-                    </span>
+                    <span><strong>Costo de fondeo = $0</strong> (no captamos depósitos, no pagamos intereses)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>Riesgo regulatorio bajo</strong> (no estamos bajo
-                      IFPE/ITF, solo regulación de datos)
-                    </span>
+                    <span><strong>Riesgo regulatorio bajo</strong> (no estamos bajo IFPE/ITF, solo regulación de datos)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong>Capital escalable:</strong> el dinero viene de la
-                      empresa, no de fondos VC ni deuda
-                    </span>
+                    <span><strong>Capital escalable:</strong> el dinero viene de la empresa, no de fondos VC ni deuda</span>
                   </li>
                 </ul>
               </Card>
@@ -270,18 +250,14 @@ export default function Home() {
         {/* DATA & MONETIZATION SECTION */}
         <section className="py-24 bg-white relative overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-                Score Treevü & Monetización
-              </h2>
-              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-                Datos de comportamiento como activo estratégico
-              </p>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">Score Treevü & Monetización</h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto">Datos de comportamiento como activo estratégico</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
@@ -289,30 +265,18 @@ export default function Home() {
                 {
                   title: "Financial Wellness Index (FWI)",
                   desc: "Score propietario que mide capacidad de pago real, estabilidad y disciplina financiera en tiempo real.",
-                  metrics: [
-                    "Comportamiento de gasto",
-                    "Historial de retiros",
-                    "Patrones de salud financiera",
-                  ],
+                  metrics: ["Comportamiento de gasto", "Historial de retiros", "Patrones de salud financiera"]
                 },
                 {
                   title: "DaaS / APIaaS",
                   desc: "Datos y APIs para partners: bancos, seguros, fintechs pueden acceder a scores y patrones de riesgo.",
-                  metrics: [
-                    "Validación de capacidad",
-                    "Segmentación de clientes",
-                    "Pricing dinámico",
-                  ],
+                  metrics: ["Validación de capacidad", "Segmentación de clientes", "Pricing dinámico"]
                 },
                 {
                   title: "Revenue Streams",
                   desc: "Modelo SaaS + transaccional + comisiones en ecosystem de beneficios.",
-                  metrics: [
-                    "SaaS por empleado",
-                    "Fee por retiro/EWA",
-                    "Merchant comisiones",
-                  ],
-                },
+                  metrics: ["SaaS por empleado", "Fee por retiro/EWA", "Merchant comisiones"]
+                }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -323,20 +287,13 @@ export default function Home() {
                 >
                   <Card className="h-full border border-slate-200 shadow-sm hover:shadow-md transition-all">
                     <CardHeader>
-                      <CardTitle className="text-slate-900">
-                        {item.title}
-                      </CardTitle>
-                      <CardDescription className="text-slate-600 text-base mt-2">
-                        {item.desc}
-                      </CardDescription>
+                      <CardTitle className="text-slate-900">{item.title}</CardTitle>
+                      <CardDescription className="text-slate-600 text-base mt-2">{item.desc}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2">
                         {item.metrics.map((metric, j) => (
-                          <li
-                            key={j}
-                            className="flex items-center gap-2 text-sm text-slate-700"
-                          >
+                          <li key={j} className="flex items-center gap-2 text-sm text-slate-700">
                             <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                             {metric}
                           </li>
@@ -354,53 +311,49 @@ export default function Home() {
         <section className="py-24 bg-slate-50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-                Pensado para Escalar en LatAm
-              </h2>
-              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-                Roadmap 24 meses: SaaS → DaaS → API Platform
-              </p>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">Pensado para Escalar en LatAm</h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto">Roadmap 36 meses: SaaS (1-6M) → DaaS (6-18M) → APIaaS (19-36M)</p>
             </motion.div>
 
             <div className="max-w-4xl mx-auto">
               <div className="space-y-6">
                 {[
                   {
-                    phase: "Ahora (Q4 2024 - Q2 2025)",
+                    phase: "SaaS: 1Q2026 - 2Q2026 (Meses 1-6)",
                     title: "SaaS Core: B2E + B2B + B2B2B",
                     items: [
                       "App del Colaborador (wallet + coaching IA)",
                       "Dashboard Corporativo (FWI, clusters de riesgo)",
-                      "Portal de Aliados (early payment, marketplace)",
+                      "Portal de Aliados (early payment, marketplace)"
                     ],
-                    target: "HR, CFOs, medianas empresas (100-500 empleados)",
+                    target: "HR, CFOs, medianas empresas (100-500 empleados)"
                   },
                   {
-                    phase: "Fase 2 (Q3 2025 - Q4 2025)",
+                    phase: "DaaS: 2Q2026 - 1Q2027 (Meses 6-18)",
                     title: "DaaS: Data as a Service",
                     items: [
                       "Score API para partners financieros",
                       "Risk Engine como servicio",
-                      "Monetización por consultas de validación",
+                      "Monetización por consultas de validación"
                     ],
-                    target: "Bancos, seguros, fintechs en LatAm",
+                    target: "Bancos, seguros, fintechs en LatAm"
                   },
                   {
-                    phase: "Fase 3 (2026+)",
+                    phase: "APIaaS: 2Q2027 - 4Q2027 (Meses 19-36)",
                     title: "Platform: Open API & Ecosystem",
                     items: [
                       "Marketplace de servicios financieros",
                       "White-label solution para payroll software",
-                      "Gobernanza descentralizada de datos",
+                      "Gobernanza descentralizada de datos"
                     ],
-                    target: "Global fintech infrastructure",
-                  },
+                    target: "Global fintech infrastructure"
+                  }
                 ].map((roadmap, i) => (
                   <motion.div
                     key={i}
@@ -416,9 +369,7 @@ export default function Home() {
                             <Badge className="mb-2 bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">
                               {roadmap.phase}
                             </Badge>
-                            <CardTitle className="text-slate-900">
-                              {roadmap.title}
-                            </CardTitle>
+                            <CardTitle className="text-slate-900">{roadmap.title}</CardTitle>
                           </div>
                           <TrendingUp className="h-6 w-6 text-primary" />
                         </div>
@@ -426,15 +377,10 @@ export default function Home() {
                       <CardContent>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div>
-                            <h4 className="font-semibold text-slate-900 text-sm mb-3">
-                              Capacidades
-                            </h4>
+                            <h4 className="font-semibold text-slate-900 text-sm mb-3">Capacidades</h4>
                             <ul className="space-y-2">
                               {roadmap.items.map((item, j) => (
-                                <li
-                                  key={j}
-                                  className="flex items-start gap-2 text-sm text-slate-600"
-                                >
+                                <li key={j} className="flex items-start gap-2 text-sm text-slate-600">
                                   <ArrowRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                                   {item}
                                 </li>
@@ -442,12 +388,8 @@ export default function Home() {
                             </ul>
                           </div>
                           <div className="bg-primary/5 p-4 rounded-lg border border-primary/10">
-                            <h4 className="font-semibold text-slate-900 text-sm mb-2">
-                              Target: Audiencia
-                            </h4>
-                            <p className="text-sm text-slate-600">
-                              {roadmap.target}
-                            </p>
+                            <h4 className="font-semibold text-slate-900 text-sm mb-2">Target: Audiencia</h4>
+                            <p className="text-sm text-slate-600">{roadmap.target}</p>
                           </div>
                         </div>
                       </CardContent>
@@ -463,33 +405,26 @@ export default function Home() {
         <section className="py-24 relative overflow-hidden">
           <div className="container mx-auto px-4 text-center max-w-3xl">
             <h2 className="font-heading text-4xl font-bold text-slate-900 mb-6">
-              Listo para transformar la <br />
-              <span className="text-primary">
-                cultura financiera de su empresa?
-              </span>
+              Listo para transformar la <br/>
+              <span className="text-primary">cultura financiera de su empresa?</span>
             </h2>
             <p className="text-lg text-slate-600 mb-10">
-              Únase a empresas en LatAm que están reduciendo rotación,
-              ausentismo y mejorando la vida de sus colaboradores con Treevü.
+              Únase a empresas en LatAm que están reduciendo rotación, ausentismo y mejorando la vida de sus colaboradores con Treevü.
             </p>
-
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <a
-                href="https://treevu.app"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button 
+                size="lg" 
+                onClick={() => setDemoModalOpen(true)}
+                className="bg-primary hover:bg-primary/90 text-white h-12 px-8 text-lg rounded-full shadow-lg shadow-primary/25"
               >
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white h-12 px-8 text-lg rounded-full shadow-lg shadow-primary/25"
-                >
-                  Comenzar Ahora
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
-              <Button
-                variant="ghost"
-                size="lg"
+                Comenzar Ahora
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="lg" 
+                onClick={() => setDemoModalOpen(true)}
                 className="text-slate-600 hover:text-primary text-lg"
               >
                 Hablar con Ventas
@@ -515,6 +450,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <RegistrationModal open={demoModalOpen} onOpenChange={setDemoModalOpen} />
     </div>
   );
 }
